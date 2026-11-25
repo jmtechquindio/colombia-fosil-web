@@ -518,6 +518,7 @@ export const institutionCards = [
 
 export const teamMembers = [
   {
+    index: '01',
     name: 'Diego Díaz',
     role: 'Geólogo · Guía líder de expediciones geoarqueológicas',
     facts: [
@@ -527,10 +528,12 @@ export const teamMembers = [
       'Buzo certificado PADI.',
       'Catedrático de la Universidad Industrial de Santander en Geoquímica, Estratigrafía y Geología de Campo.',
     ],
-    territory:
+    highlightTitle: 'Territorios de expedición',
+    highlightCopy:
       'Amazonia: PNN Chiribiquete, Reserva Nacional Natural Nukak Makú, Raudal del Jirijirimo y Raudal del Yuruparí. Orinoquia: rutas ecuestres Guadalupe Salcedo y Ruta del Arte Rupestre del Orinoco. Cordillera: Cañón del Chicamocha, Farallones de San Miguel y San Luis de Gaceno, dinoturbación San Gil–Chíquiza–Santa María, paleobotánica de Miraflores y Pajarito (Villavicencio).',
   },
   {
+    index: '02',
     name: 'Ricardo Soto Ramírez',
     role: 'Salud ocupacional · Vigía del patrimonio',
     facts: [
@@ -539,7 +542,23 @@ export const teamMembers = [
       'Cursos de Salud Ocupacional (SENA).',
       'Coordinador de salud ocupacional en proyectos de gasimetrías en Casanare, Meta y Córdoba durante más de 4 años.',
     ],
-    territory: null,
+    highlightTitle: null,
+    highlightCopy: null,
+  },
+  {
+    index: '03',
+    name: 'Jorge Alberto Aristizábal Moreno',
+    role: 'Tecnología · Inteligencia artificial · Ecoturismo y divulgación del patrimonio',
+    facts: [
+      'Tecnólogo en Análisis y Desarrollo de Sistemas de Información (SENA), estudiante de Guianza Turística y miembro de Corpomontaña (Corporación Colombiana de Montañismo) y de Nómada Colombia Sin Fronteras.',
+      'Formación complementaria en conservación, sostenibilidad, ecoturismo, turismo regenerativo y excursionismo.',
+      'Diplomado en Gestión Integral para la Conservación: Sostenibilidad, Ecoturismo y Cultura de Paz (90 horas), Universidad Tecnológica de Pereira.',
+      'Diplomado en Turismo Regenerativo y Desarrollo de Experiencias Territoriales (58 horas).',
+      'Experiencia en desarrollo de software y aseguramiento de calidad (QA), aplicada con inteligencia artificial generativa, agentes de IA y tecnologías digitales para investigación, creación de contenidos, producción multimedia y desarrollo de recursos educativos.',
+    ],
+    highlightTitle: 'Tecnología e innovación al servicio del territorio',
+    highlightCopy:
+      'En Colombia Fósil contribuye a integrar herramientas digitales e inteligencia artificial con la divulgación científica y la educación, creando recursos y experiencias que acercan la historia geológica y paleontológica de Colombia a diferentes públicos y promueven el conocimiento, la conservación y la apropiación del patrimonio natural y cultural.',
   },
 ];
 

@@ -200,7 +200,7 @@ function renderHomePage() {
         </div>
       </section>
 
-      <section class="container-shell section" style="padding-top: 0;">
+      <section class="container-shell section section-tight-top">
         <div class="grid-2">
           <a href="${routeHref('/servicios')}" class="feature-link-card" data-nav-link>
             <div class="eyebrow text-primary">SERVICIOS</div>
@@ -326,7 +326,7 @@ function renderHomePage() {
               </a>
             </div>
           </div>
-          <div>
+          <div class="contact-card-surface">
             ${renderContactForm('home-contact-form')}
           </div>
         </div>
@@ -783,17 +783,23 @@ function renderNosotrosPage() {
   const teamHtml = teamMembers
     .map(
       (member) => `
-      <article class="value-item">
-        <h3>${escapeHtml(member.name)}</h3>
-        <p class="team-role">${escapeHtml(member.role)}</p>
+      <article class="team-card">
+        <div class="team-card-head">
+          <span class="team-index">${escapeHtml(member.index)}</span>
+          <div>
+            <h3>${escapeHtml(member.name)}</h3>
+            <p class="team-role">${escapeHtml(member.role)}</p>
+          </div>
+        </div>
         <ul class="team-facts">
           ${member.facts.map((f) => `<li>${escapeHtml(f)}</li>`).join('')}
         </ul>
         ${
-          member.territory
-            ? `<p class="team-territory"><strong>Territorios de expedición.</strong> ${escapeHtml(
-                member.territory
-              )}</p>`
+          member.highlightCopy
+            ? `<div class="team-highlight">
+                 <strong>${escapeHtml(member.highlightTitle)}</strong>
+                 <p>${escapeHtml(member.highlightCopy)}</p>
+               </div>`
             : ''
         }
       </article>
@@ -854,24 +860,32 @@ function renderNosotrosPage() {
         </div>
 
         <div class="team-section">
-          <div class="eyebrow text-primary">Equipo</div>
-          <h2>Quiénes exploran contigo</h2>
-          <figure class="detail-photo mt-6">
-            <img
-              src="${assetUrl('/assets/chicamocha-canon.jpg')}"
-              alt="Cañón del Chicamocha y ecosistema xerofítico en Santander, Colombia"
-            />
-            <figcaption>
-              Cañón del Chicamocha, territorio donde Diego Díaz y Ricardo Soto ejercen como Vigías del Patrimonio Geoarqueológico.
-              <a
-                href="https://commons.wikimedia.org/wiki/File:WLE2026_CO_-_Ecosistema_xerof%C3%ADtico_del_Ca%C3%B1%C3%B3n_del_Chicamocha_(28).jpg"
-                target="_blank"
-                rel="noreferrer"
-                class="text-link"
-              >Jedidiahhorne · CC BY-SA 4.0 · Wikimedia Commons ${icons.arrowUpRight()}</a>
-            </figcaption>
-          </figure>
-          <div class="grid-2-wide mt-10">
+          <div class="team-header-grid">
+            <div>
+              <div class="eyebrow text-primary">Equipo</div>
+              <h2>Quiénes exploran contigo</h2>
+              <p class="section-copy">
+                Un equipo interdisciplinario que une geología de campo, seguridad ocupacional,
+                guianza patrimonial y tecnología aplicada a la divulgación científica.
+              </p>
+            </div>
+            <figure class="detail-photo team-banner-photo">
+              <img
+                src="${assetUrl('/assets/chicamocha-canon.jpg')}"
+                alt="Cañón del Chicamocha y ecosistema xerofítico en Santander, Colombia"
+              />
+              <figcaption>
+                Cañón del Chicamocha · Vigías del Patrimonio Geoarqueológico.
+                <a
+                  href="https://commons.wikimedia.org/wiki/File:WLE2026_CO_-_Ecosistema_xerof%C3%ADtico_del_Ca%C3%B1%C3%B3n_del_Chicamocha_(28).jpg"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="text-link"
+                >Jedidiahhorne · CC BY-SA 4.0 ${icons.arrowUpRight()}</a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="team-grid">
             ${teamHtml}
           </div>
         </div>
@@ -1328,7 +1342,7 @@ function renderContactoPage() {
             </a>
           </div>
         </div>
-        <div>
+        <div class="contact-card-surface">
           ${renderContactForm('page-contact-form')}
         </div>
       </section>
