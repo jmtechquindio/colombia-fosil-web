@@ -1181,7 +1181,7 @@ function renderInformacionPage() {
         <div class="grid-2-wide">
           <article class="info-card">
             <img
-              src="${assetUrl('/assets/ammonites.webp')}"
+              src="${assetUrl('/assets/ammonites-hd.jpg')}"
               alt="Lámina publicada de ammonites de la Formación Paja"
             />
             <p class="fossil-credit">Pedro Patarroyo · 2009 · CC BY 3.0</p>

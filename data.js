@@ -358,7 +358,7 @@ export const destinations = [
     status: 'Plan corto 3 días · Archivo activo',
     expeditionSlug: 'trekking-georupestre-desierto',
     icon: 'layers',
-    image: '/assets/ammonites.webp',
+    image: '/assets/ammonites-hd.jpg',
     imageAlt: 'Ammonites documentados en la Formación Paja, Colombia',
     imageCredit: 'Pedro Patarroyo · 2009 · CC BY 3.0',
     imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Paja_Formation_-_Ammonites.jpg',
@@ -372,7 +372,7 @@ export const destinations = [
       'Formaciones sedimentarias cretácicas y cenozoicas',
       'Piedemonte llanero e indicios georupestres cercanos a Bogotá',
     ],
-    detailImage: '/assets/ammonites.webp',
+    detailImage: '/assets/ammonites-hd.jpg',
     detailImageAlt: 'Ammonites de la Formación Paja',
     detailImageCaption:
       'Ammonites de la Formación Paja. Pedro Patarroyo, 2009 · CC BY 3.0. Fotografía documental; no identifica un sitio de recolección.',
@@ -416,7 +416,7 @@ export const experiences = [
     location: 'Territorios paleontológicos y zonas desérticas',
     learningObjective:
       'Comprender el valor del registro fósil y las razones científicas y legales para conservarlo intacto.',
-    image: '/assets/ammonites.webp',
+    image: '/assets/ammonites-hd.jpg',
     imageAlt: 'Ammonites de la Formación Paja',
     imageCredit: 'Ammonites de la Formación Paja · Pedro Patarroyo, 2009 · CC BY 3.0 · Wikimedia Commons.',
     imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Paja_Formation_-_Ammonites.jpg',
@@ -566,7 +566,7 @@ export const fossilsCatalog = [
   {
     id: 'ammonites-formacion-paja',
     title: 'Ammonites de la Formación Paja',
-    image: '/assets/ammonites.webp',
+    image: '/assets/ammonites-hd.jpg',
     imageAlt: 'Ammonites de la Formación Paja',
     credit: 'Pedro Patarroyo · 2009 · CC BY 3.0',
     period: 'Cretácico',
