@@ -915,7 +915,7 @@ function renderDestinoDetailPage(slug) {
               ${
                 linkedExp
                   ? `<a href="${routeHref(`/expediciones/${linkedExp.slug}`)}" class="btn btn-primary" data-nav-link>
-                      Ver ficha de expedición (${escapeHtml(linkedExp.duration)}) ${icons.arrowUpRight()}
+                      Ver ficha de expedición (${escapeHtml(linkedExp.durationShort)}) ${icons.arrowUpRight()}
                     </a>`
                   : ''
               }
