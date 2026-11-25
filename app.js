@@ -781,9 +781,21 @@ function renderInstitucionesPage() {
 
 function renderNosotrosPage() {
   const teamHtml = teamMembers
-    .map(
-      (member) => `
+    .map((member) => {
+      const photoSlot = member.photo
+        ? `<img src="${escapeHtml(assetUrl(member.photo))}" alt="${escapeHtml(member.name)}" />`
+        : `<div class="team-photo-placeholder" aria-label="Espacio reservado para fotografía de ${escapeHtml(
+            member.name
+          )}">
+             <span class="team-photo-monogram">${escapeHtml(member.initials)}</span>
+             <span class="team-photo-label">Fotografía del equipo · Por cargar</span>
+           </div>`;
+
+      return `
       <article class="team-card">
+        <div class="team-photo-box">
+          ${photoSlot}
+        </div>
         <div class="team-card-head">
           <span class="team-index">${escapeHtml(member.index)}</span>
           <div>
@@ -803,8 +815,8 @@ function renderNosotrosPage() {
             : ''
         }
       </article>
-    `
-    )
+    `;
+    })
     .join('');
 
   return {

@@ -1,5 +1,5 @@
-export const WHATSAPP_DISPLAY = '+57 321 225 7107';
-export const WHATSAPP_URL = 'https://wa.me/573212257107';
+export const WHATSAPP_DISPLAY = '+57 322 625 0965';
+export const WHATSAPP_URL = 'https://wa.me/573226250965';
 
 export const navItems = [
   { label: 'Inicio', path: '/' },
@@ -519,6 +519,8 @@ export const institutionCards = [
 export const teamMembers = [
   {
     index: '01',
+    initials: 'DD',
+    photo: null,
     name: 'Diego Díaz',
     role: 'Geólogo · Guía líder de expediciones geoarqueológicas',
     facts: [
@@ -534,6 +536,8 @@ export const teamMembers = [
   },
   {
     index: '02',
+    initials: 'RS',
+    photo: null,
     name: 'Ricardo Soto Ramírez',
     role: 'Salud ocupacional · Vigía del patrimonio',
     facts: [
@@ -547,6 +551,8 @@ export const teamMembers = [
   },
   {
     index: '03',
+    initials: 'JA',
+    photo: null,
     name: 'Jorge Alberto Aristizábal Moreno',
     role: 'Tecnología · Inteligencia artificial · Ecoturismo y divulgación del patrimonio',
     facts: [

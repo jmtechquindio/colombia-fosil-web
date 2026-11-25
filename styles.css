@@ -1008,10 +1008,64 @@ a.discipline-item:hover {
   border: 1px solid var(--border);
   border-top: 3px solid var(--primary);
   border-radius: 16px;
-  padding: 28px;
+  padding: 22px 24px 26px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 16px oklch(18% 0.03 220 / 0.04);
+}
+
+.team-photo-box {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: var(--muted);
+  border: 1px dashed oklch(76% 0.015 190);
+}
+
+.team-photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+
+.team-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: radial-gradient(circle at 50% 35%, oklch(96% 0.01 155), var(--muted));
+  padding: 16px;
+  text-align: center;
+}
+
+.team-photo-monogram {
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px oklch(18% 0.03 220 / 0.06);
+}
+
+.team-photo-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted-foreground);
 }
 
 .team-card-head {
