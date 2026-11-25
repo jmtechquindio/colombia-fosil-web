@@ -43,6 +43,10 @@ export const expeditions = [
     transportShort: 'Terrestre privado',
     ecosystemShort: 'Zonas áridas y montaña',
     topoKey: 'desierto',
+    image: '/assets/desierto-tatacoa.jpg',
+    imageAlt: 'Paisaje de cárcavas erosionadas en el Desierto de la Tatacoa, Colombia',
+    imageCredit: 'Ricardo Gonzalez Arango · CC BY-SA 4.0',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Tatacoa_Desert.jpg',
     region: 'Zonas desérticas, valles interandinos y piedemonte',
     logisticsSummary: 'Transporte terrestre privado puerta a puerta desde la ciudad de origen.',
     accommodation:
@@ -107,6 +111,11 @@ export const expeditions = [
     transportShort: 'Chárter + Fluvial',
     ecosystemShort: 'Escudo Guayanés',
     topoKey: 'vaupes',
+    image: '/assets/vaupes-jirijirimo.jpg',
+    imageAlt: 'Raudal del Jirijirimó en la Reserva Yaigojé Apaporis, Vaupés',
+    imageCredit: 'Jucatili25 · CC BY-SA 4.0',
+    imageSourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Raudal_del_Jirijirimo-_Reserva_Yaigoj%C3%A9_Apaporis.jpg',
     region: 'Vaupés · Mitú, Raudal del Jirijirimó y Serranía de Morroco (Escudo Guayanés)',
     logisticsSummary:
       'Vuelos chárter en avioneta sobre la Serranía de Morroco, navegación fluvial en canoa con motor fuera de borda y operación bajo gobernanza indígena.',
@@ -202,6 +211,10 @@ export const expeditions = [
     transportShort: 'Terrestre + Fluvial',
     ecosystemShort: 'Selva y La Lindosa',
     topoKey: 'guaviare',
+    image: '/assets/guaviare-lindosa.jpg',
+    imageAlt: 'Serranía de La Lindosa en San José del Guaviare, Colombia',
+    imageCredit: 'Julianruizp · CC BY-SA 4.0',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:La_lindosa.jpg',
     region: 'Guaviare · San José del Guaviare, Puerta de Orión, Lagunas de Nare y Cerro Nuevo Tolima',
     logisticsSummary:
       'Transporte terrestre privado puerta a puerta desde Bogotá hacia San José del Guaviare y traslados rurales locales en vehículo veredal y fluvial.',
@@ -281,7 +294,11 @@ export const destinations = [
     status: 'Expedición comunitaria · 7 días',
     expeditionSlug: 'trekking-georupestre-guyana',
     icon: 'compass',
-    image: null,
+    image: '/assets/vaupes-jirijirimo.jpg',
+    imageAlt: 'Raudal del Jirijirimó en la Reserva Yaigojé Apaporis, Vaupés',
+    imageCredit: 'Jucatili25 · CC BY-SA 4.0',
+    imageSourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Raudal_del_Jirijirimo-_Reserva_Yaigoj%C3%A9_Apaporis.jpg',
     contextTitle: 'Contexto y documentación',
     contextCopy:
       'El territorio del Vaupés articula el Escudo Guayanés (Serranía de Morroco / Tepuy Way Ari Kiu) con los ríos Apaporis y Cananarí. Toda visita se realiza con consentimiento previo, rezos de permiso y guías asignados por las comunidades taiwano y piapoco.',
@@ -293,7 +310,11 @@ export const destinations = [
       'Río Apaporis y Río Cananarí',
       'Serranía de Morroco y Tepuy Way Ari Kiu (cavernas en cuarcitas)',
     ],
-    photoNote: 'Fotografías específicas pendientes de documentación y autorización comunitaria.',
+    detailImage: '/assets/vaupes-jirijirimo.jpg',
+    detailImageAlt: 'Raudal del Jirijirimó en la Reserva Yaigojé Apaporis, Vaupés',
+    detailImageCaption: 'Raudal del Jirijirimó · Reserva Yaigojé Apaporis. Jucatili25 · CC BY-SA 4.0.',
+    detailImageSourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Raudal_del_Jirijirimo-_Reserva_Yaigoj%C3%A9_Apaporis.jpg',
   },
   {
     slug: 'guaviare',
@@ -306,7 +327,10 @@ export const destinations = [
     status: 'Expedición geoarqueológica · 4 días',
     expeditionSlug: 'trekking-georupestre-guaviare',
     icon: 'mountain',
-    image: null,
+    image: '/assets/guaviare-lindosa.jpg',
+    imageAlt: 'Serranía de La Lindosa en San José del Guaviare, Colombia',
+    imageCredit: 'Julianruizp · CC BY-SA 4.0',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:La_lindosa.jpg',
     contextTitle: 'Contexto y documentación',
     contextCopy:
       'El ICANH documenta la declaración de ocho zonas de La Lindosa como Área Arqueológica Protegida en 2018. Las rutas integradas operan únicamente por senderos autorizados y con acompañamiento comunitario.',
@@ -319,7 +343,10 @@ export const destinations = [
       'Macarenia clavigera en caños estacionales',
       'Reserva Lagunas de Nare (meandros, toninas y nutrias gigantes)',
     ],
-    photoNote: 'Fotografías específicas pendientes de documentación y autorización.',
+    detailImage: '/assets/guaviare-lindosa.jpg',
+    detailImageAlt: 'Serranía de La Lindosa en San José del Guaviare, Colombia',
+    detailImageCaption: 'Serranía de La Lindosa, Guaviare. Julianruizp · CC BY-SA 4.0.',
+    detailImageSourceUrl: 'https://commons.wikimedia.org/wiki/File:La_lindosa.jpg',
   },
   {
     slug: 'territorios-paleontologicos',
@@ -333,6 +360,8 @@ export const destinations = [
     icon: 'layers',
     image: '/assets/ammonites.webp',
     imageAlt: 'Ammonites documentados en la Formación Paja, Colombia',
+    imageCredit: 'Pedro Patarroyo · 2009 · CC BY 3.0',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Paja_Formation_-_Ammonites.jpg',
     contextTitle: 'Contexto y documentación',
     contextCopy:
       'El Servicio Geológico Colombiano reconoce el patrimonio geológico y paleontológico como parte de la geodiversidad del país y promueve su identificación, valoración y conservación in situ.',
@@ -347,6 +376,8 @@ export const destinations = [
     detailImageAlt: 'Ammonites de la Formación Paja',
     detailImageCaption:
       'Ammonites de la Formación Paja. Pedro Patarroyo, 2009 · CC BY 3.0. Fotografía documental; no identifica un sitio de recolección.',
+    detailImageSourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Paja_Formation_-_Ammonites.jpg',
   },
 ];
 
@@ -370,6 +401,11 @@ export const experiences = [
     location: 'Piedemonte llanero, Cordillera y Escudo Guayanés',
     learningObjective:
       'Relacionar la observación del paisaje con procesos geológicos documentados en lenguaje cercano o técnico según el perfil del grupo.',
+    image: '/assets/chicamocha-canon.jpg',
+    imageAlt: 'Afloramientos y laderas del Cañón del Chicamocha en Colombia',
+    imageCredit: 'Cañón del Chicamocha · Jedidiahhorne · CC BY-SA 4.0 · Wikimedia Commons.',
+    imageSourceUrl:
+      'https://commons.wikimedia.org/wiki/File:WLE2026_CO_-_Ecosistema_xerof%C3%ADtico_del_Ca%C3%B1%C3%B3n_del_Chicamocha_(28).jpg',
   },
   {
     slug: 'huellas-de-antiguos-mares',
@@ -380,6 +416,10 @@ export const experiences = [
     location: 'Territorios paleontológicos y zonas desérticas',
     learningObjective:
       'Comprender el valor del registro fósil y las razones científicas y legales para conservarlo intacto.',
+    image: '/assets/ammonites.webp',
+    imageAlt: 'Ammonites de la Formación Paja',
+    imageCredit: 'Ammonites de la Formación Paja · Pedro Patarroyo, 2009 · CC BY 3.0 · Wikimedia Commons.',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Paja_Formation_-_Ammonites.jpg',
   },
   {
     slug: 'paisajes-subterraneos',
@@ -400,6 +440,11 @@ export const experiences = [
     location: 'Desierto, Piedemonte, Guaviare y Vaupés',
     learningObjective:
       'Observar cambios del paisaje y formular preguntas sobre la relación entre geología, agua y cultura.',
+    image: '/assets/chicamocha-canon.jpg',
+    imageAlt: 'Ecosistema xerofítico y cañón fluvial en el Cañón del Chicamocha',
+    imageCredit: 'Cañón del Chicamocha · Jedidiahhorne · CC BY-SA 4.0 · Wikimedia Commons.',
+    imageSourceUrl:
+      'https://commons.wikimedia.org/wiki/File:WLE2026_CO_-_Ecosistema_xerof%C3%ADtico_del_Ca%C3%B1%C3%B3n_del_Chicamocha_(28).jpg',
   },
   {
     slug: 'territorio-vivo',
@@ -412,7 +457,8 @@ export const experiences = [
     image: '/assets/expedicion-el-hatico.webp',
     imageAlt: 'Trabajo científico en campo para mediciones ambientales en bosque tropical',
     imageCredit:
-      'Fotografía documental de trabajo científico en campo (CIAT · Neil Palmer, mayo de 2011 · CC BY-SA 2.0). No corresponde a una actividad comercial de COLOMBIA FÓSIL.',
+      'Fotografía documental de trabajo científico en campo (CIAT · Neil Palmer, mayo de 2011 · CC BY-SA 2.0).',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:NP_REDD_Workshop12_(5739799829).jpg',
   },
   {
     slug: 'memoria-del-paisaje',
@@ -423,6 +469,10 @@ export const experiences = [
     location: 'Guaviare (La Lindosa / Cerro Nuevo Tolima) y Vaupés',
     learningObjective:
       'Reconocer el patrimonio cultural y rupestre sin tocar, intervenir ni alterar los sitios.',
+    image: '/assets/guaviare-lindosa.jpg',
+    imageAlt: 'Serranía de La Lindosa en San José del Guaviare',
+    imageCredit: 'Serranía de La Lindosa · Julianruizp · CC BY-SA 4.0 · Wikimedia Commons.',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:La_lindosa.jpg',
   },
   {
     slug: 'mirar-el-cielo',
@@ -432,6 +482,10 @@ export const experiences = [
     location: 'Zonas desérticas y campamentos de selva',
     learningObjective:
       'Relacionar la observación del cosmos con conceptos de astronomía y cuidado del entorno natural.',
+    image: '/assets/desierto-tatacoa.jpg',
+    imageAlt: 'Desierto de la Tatacoa bajo cielo abierto, Colombia',
+    imageCredit: 'Desierto de la Tatacoa · Ricardo Gonzalez Arango · CC BY-SA 4.0 · Wikimedia Commons.',
+    imageSourceUrl: 'https://commons.wikimedia.org/wiki/File:Tatacoa_Desert.jpg',
   },
 ];
 

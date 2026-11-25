@@ -231,19 +231,29 @@ export function renderExpeditionCard(exp, audienceMode = 'explorer') {
   const isCatB = exp.category.startsWith('Categoría B');
   const content = audienceMode === 'academic' ? exp.academic : exp.explorer;
   const topo = topoArtwork[exp.topoKey] || topoArtwork.desierto;
+  const expUrl = routeHref(`/expediciones/${exp.slug}`);
+
+  const visualInner = exp.image
+    ? `<img src="${escapeHtml(assetUrl(exp.image))}" alt="${escapeHtml(exp.imageAlt)}" />`
+    : topo;
+
+  const photoCredit = exp.image
+    ? `<div class="expedition-photo-credit">
+         Foto: <a href="${escapeHtml(exp.imageSourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(
+           exp.imageCredit
+         )} · Wikimedia Commons</a>
+       </div>`
+    : '';
 
   return `
-    <a
-      href="${routeHref(`/expediciones/${exp.slug}`)}"
-      class="expedition-card ${isCatB ? 'cat-b' : ''}"
-      data-nav-link
-    >
-      <div class="expedition-visual">
-        ${topo}
+    <article class="expedition-card ${isCatB ? 'cat-b' : ''}">
+      <a href="${expUrl}" class="expedition-visual ${exp.image ? 'has-photo' : ''}" data-nav-link>
+        ${visualInner}
         <span class="expedition-cat-tag">${escapeHtml(exp.categoryShort)}</span>
-      </div>
+      </a>
+      ${photoCredit}
       <div class="card-label">${escapeHtml(exp.cardLabel)}</div>
-      <h3>${escapeHtml(exp.title)}</h3>
+      <h3><a href="${expUrl}" data-nav-link>${escapeHtml(exp.title)}</a></h3>
       <p>${escapeHtml(content.summary)}</p>
       <dl class="expedition-specs">
         <div>
@@ -260,9 +270,11 @@ export function renderExpeditionCard(exp, audienceMode = 'explorer') {
         </div>
       </dl>
       <div class="expedition-card-footer">
-        <span class="text-link">Ver ficha completa ${icons.arrowUpRight()}</span>
+        <a href="${expUrl}" class="text-link" data-nav-link>
+          Ver ficha completa ${icons.arrowUpRight()}
+        </a>
       </div>
-    </a>
+    </article>
   `;
 }
 
@@ -291,24 +303,37 @@ export function renderWhatsAppCta(
 
 export function renderDestinationCard(dest) {
   const topo = dest.topoKey ? topoArtwork[dest.topoKey] : '';
+  const destUrl = routeHref(`/destinos/${dest.slug}`);
+  const isSpecimen = dest.slug === 'territorios-paleontologicos';
   const visual = dest.image
-    ? `<img src="${escapeHtml(assetUrl(dest.image))}" alt="${escapeHtml(dest.imageAlt)}" />`
+    ? `<img src="${escapeHtml(assetUrl(dest.image))}" alt="${escapeHtml(dest.imageAlt)}" class="${
+        isSpecimen ? '' : 'photo-cover'
+      }" />`
     : `<div class="territory-placeholder">
          ${topo || icons[dest.icon]()}
          <span>CARTOGRAFÍA VISUAL · EN DOCUMENTACIÓN</span>
        </div>`;
 
+  const creditHtml = dest.imageCredit
+    ? `<div class="photo-source-caption">
+         Foto: <a href="${escapeHtml(dest.imageSourceUrl)}" target="_blank" rel="noreferrer">${escapeHtml(
+           dest.imageCredit
+         )} · Wikimedia Commons</a>
+       </div>`
+    : '';
+
   return `
-    <a href="${routeHref(`/destinos/${dest.slug}`)}" class="destination-card" data-nav-link>
-      <div class="card-photo ${dest.image ? 'is-specimen-plate' : ''}">${visual}</div>
+    <article class="destination-card">
+      <a href="${destUrl}" class="card-photo ${isSpecimen ? 'is-specimen-plate' : ''}" data-nav-link>${visual}</a>
+      ${creditHtml}
       <div class="card-label">${escapeHtml(dest.label)}</div>
-      <div class="destination-card-title-row">
+      <a href="${destUrl}" class="destination-card-title-row" data-nav-link>
         <h3>${escapeHtml(dest.title)}</h3>
         ${icons.arrowUpRight()}
-      </div>
+      </a>
       <p>${escapeHtml(dest.summary)}</p>
       <span class="status">${escapeHtml(dest.status)}</span>
-    </a>
+    </article>
   `;
 }
 

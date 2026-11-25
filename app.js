@@ -475,7 +475,21 @@ function renderExpedicionDetailPage(slug) {
             )}
           </div>
 
-          <dl class="detail-facts">
+          <aside>
+            ${
+              exp.image
+                ? `<figure class="detail-photo mb-5">
+                    <img src="${escapeHtml(assetUrl(exp.image))}" alt="${escapeHtml(exp.imageAlt)}" />
+                    <figcaption>
+                      ${escapeHtml(exp.imageAlt)}.
+                      <a href="${escapeHtml(exp.imageSourceUrl)}" target="_blank" rel="noreferrer" class="text-link">
+                        ${escapeHtml(exp.imageCredit)} · Wikimedia Commons ${icons.arrowUpRight()}
+                      </a>
+                    </figcaption>
+                  </figure>`
+                : ''
+            }
+            <dl class="detail-facts">
             <div>
               <dt>Tipología</dt>
               <dd>${escapeHtml(exp.category)}</dd>
@@ -505,6 +519,7 @@ function renderExpedicionDetailPage(slug) {
               <dd>Personalizada por WhatsApp según grupo y logística (no publicamos tarifas en línea).</dd>
             </div>
           </dl>
+          </aside>
         </div>
       </section>
     `,
@@ -638,7 +653,16 @@ function renderExperienciaDetailPage(slug) {
     ? `
       <figure class="detail-photo">
         <img src="${escapeHtml(assetUrl(exp.image))}" alt="${escapeHtml(exp.imageAlt)}" />
-        <figcaption>${escapeHtml(exp.imageCredit)}</figcaption>
+        <figcaption>
+          ${escapeHtml(exp.imageCredit)}
+          ${
+            exp.imageSourceUrl
+              ? ` <a href="${escapeHtml(exp.imageSourceUrl)}" target="_blank" rel="noreferrer" class="text-link">
+                    Ver fuente original ${icons.arrowUpRight()}
+                  </a>`
+              : ''
+          }
+        </figcaption>
       </figure>
     `
     : `<p>Galería específica pendiente de documentación y autorización. No se muestran imágenes ilustrativas como evidencia del sitio.</p>`;
@@ -832,6 +856,21 @@ function renderNosotrosPage() {
         <div class="team-section">
           <div class="eyebrow text-primary">Equipo</div>
           <h2>Quiénes exploran contigo</h2>
+          <figure class="detail-photo mt-6">
+            <img
+              src="${assetUrl('/assets/chicamocha-canon.jpg')}"
+              alt="Cañón del Chicamocha y ecosistema xerofítico en Santander, Colombia"
+            />
+            <figcaption>
+              Cañón del Chicamocha, territorio donde Diego Díaz y Ricardo Soto ejercen como Vigías del Patrimonio Geoarqueológico.
+              <a
+                href="https://commons.wikimedia.org/wiki/File:WLE2026_CO_-_Ecosistema_xerof%C3%ADtico_del_Ca%C3%B1%C3%B3n_del_Chicamocha_(28).jpg"
+                target="_blank"
+                rel="noreferrer"
+                class="text-link"
+              >Jedidiahhorne · CC BY-SA 4.0 · Wikimedia Commons ${icons.arrowUpRight()}</a>
+            </figcaption>
+          </figure>
           <div class="grid-2-wide mt-10">
             ${teamHtml}
           </div>
@@ -869,7 +908,16 @@ function renderDestinoDetailPage(slug) {
   const photoBlock = dest.detailImage
     ? `<figure class="detail-photo">
          <img src="${escapeHtml(assetUrl(dest.detailImage))}" alt="${escapeHtml(dest.detailImageAlt)}" />
-         <figcaption>${escapeHtml(dest.detailImageCaption)}</figcaption>
+         <figcaption>
+           ${escapeHtml(dest.detailImageCaption)}
+           ${
+             dest.detailImageSourceUrl
+               ? ` <a href="${escapeHtml(dest.detailImageSourceUrl)}" target="_blank" rel="noreferrer" class="text-link">
+                     Wikimedia Commons ${icons.arrowUpRight()}
+                   </a>`
+               : ''
+           }
+         </figcaption>
        </figure>`
     : `<p>${escapeHtml(dest.photoNote)}</p>`;
 
@@ -1382,6 +1430,66 @@ function renderPrivacidadPage() {
                 class="text-link"
               >
                 Archivo original y licencia ${icons.arrowUpRight()}
+              </a>
+            </p>
+
+            <h2>Fotografía del Raudal del Jirijirimó (Vaupés)</h2>
+            <p>
+              Raudal del Jirijirimó, Reserva Yaigojé Apaporis. Jucatili25 · CC BY-SA 4.0.
+            </p>
+            <p>
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Raudal_del_Jirijirimo-_Reserva_Yaigoj%C3%A9_Apaporis.jpg"
+                target="_blank"
+                rel="noreferrer"
+                class="text-link"
+              >
+                Archivo original y licencia (Wikimedia Commons) ${icons.arrowUpRight()}
+              </a>
+            </p>
+
+            <h2>Fotografía de la Serranía de La Lindosa (Guaviare)</h2>
+            <p>
+              Serranía de La Lindosa, San José del Guaviare. Julianruizp · CC BY-SA 4.0.
+            </p>
+            <p>
+              <a
+                href="https://commons.wikimedia.org/wiki/File:La_lindosa.jpg"
+                target="_blank"
+                rel="noreferrer"
+                class="text-link"
+              >
+                Archivo original y licencia (Wikimedia Commons) ${icons.arrowUpRight()}
+              </a>
+            </p>
+
+            <h2>Fotografía del Desierto de la Tatacoa</h2>
+            <p>
+              Formaciones erosionadas del Desierto de la Tatacoa, Huila. Ricardo Gonzalez Arango · CC BY-SA 4.0.
+            </p>
+            <p>
+              <a
+                href="https://commons.wikimedia.org/wiki/File:Tatacoa_Desert.jpg"
+                target="_blank"
+                rel="noreferrer"
+                class="text-link"
+              >
+                Archivo original y licencia (Wikimedia Commons) ${icons.arrowUpRight()}
+              </a>
+            </p>
+
+            <h2>Fotografía del Cañón del Chicamocha</h2>
+            <p>
+              Ecosistema xerofítico del Cañón del Chicamocha, Santander. Jedidiahhorne · CC BY-SA 4.0.
+            </p>
+            <p>
+              <a
+                href="https://commons.wikimedia.org/wiki/File:WLE2026_CO_-_Ecosistema_xerof%C3%ADtico_del_Ca%C3%B1%C3%B3n_del_Chicamocha_(28).jpg"
+                target="_blank"
+                rel="noreferrer"
+                class="text-link"
+              >
+                Archivo original y licencia (Wikimedia Commons) ${icons.arrowUpRight()}
               </a>
             </p>
           </div>
