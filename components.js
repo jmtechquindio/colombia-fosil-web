@@ -1,4 +1,4 @@
-import { brandMarkSvg, icons } from './icons.js';
+import { brandMarkSvg, icons, topoArtwork } from './icons.js';
 import { navItems, footerLinks, WHATSAPP_DISPLAY, WHATSAPP_URL } from './data.js';
 
 export function escapeHtml(str) {
@@ -131,38 +131,55 @@ export function renderHeader(currentPath, mobileMenuOpen) {
 }
 
 export function renderFooter() {
-  const linksHtml = footerLinks
-    .map(
-      (item) =>
-        `<a href="${routeHref(item.path)}" data-nav-link>${escapeHtml(item.label)}</a>`
-    )
-    .join('');
-
   return `
     <footer class="site-footer">
       <div class="container-shell">
-        <div class="footer-top">
-          <a href="${routeHref('/')}" class="brand" data-nav-link>
-            ${brandMarkSvg}
-            <div>
-              <div class="brand-name">COLOMBIA FÓSIL</div>
-              <div class="brand-tagline">Explorar para comprender</div>
-            </div>
-          </a>
-          <div class="footer-links">
-            ${linksHtml}
-            <a
-              href="${whatsappHref('Hola COLOMBIA FÓSIL, solicito mayor información.')}"
-              target="_blank"
-              rel="noreferrer"
-            >
-              WhatsApp ${WHATSAPP_DISPLAY}
+        <div class="footer-grid">
+          <div class="footer-brand-col">
+            <a href="${routeHref('/')}" class="brand" data-nav-link>
+              ${brandMarkSvg}
+              <div>
+                <div class="brand-name">COLOMBIA FÓSIL</div>
+                <div class="brand-tagline">Explorar para comprender</div>
+              </div>
             </a>
+            <p class="footer-manifesto">
+              Turismo geoarqueológico, divulgación científica verificable y gobernanza comunitaria
+              en territorios naturales y culturales de Colombia.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col-title">Explorar</div>
+            <div class="footer-col-links">
+              <a href="${routeHref('/expediciones')}" data-nav-link>Expediciones</a>
+              <a href="${routeHref('/servicios')}" data-nav-link>Servicios y propuestas</a>
+              <a href="${routeHref('/destinos')}" data-nav-link>Destinos</a>
+              <a href="${routeHref('/fosiles')}" data-nav-link>Catálogo de fósiles</a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <div class="footer-col-title">Proyecto y contacto</div>
+            <div class="footer-col-links">
+              <a href="${routeHref('/nosotros')}" data-nav-link>Quiénes somos</a>
+              <a href="${routeHref('/ciencia')}" data-nav-link>Ciencia y conocimiento</a>
+              <a href="${routeHref('/privacidad')}" data-nav-link>Privacidad y créditos</a>
+              <a
+                href="${whatsappHref('Hola COLOMBIA FÓSIL, solicito mayor información.')}"
+                target="_blank"
+                rel="noreferrer"
+                class="footer-wa-link"
+              >
+                ${icons.whatsapp()} WhatsApp ${WHATSAPP_DISPLAY}
+              </a>
+            </div>
           </div>
         </div>
+
         <div class="footer-bottom">
           <span>© 2026 COLOMBIA FÓSIL · Explorar para comprender.</span>
-          <span>Turismo geoarqueológico, ciencia y gobernanza comunitaria · Colombia.</span>
+          <span>Ciencia, territorio y conservación. Hecho en Colombia.</span>
         </div>
       </div>
     </footer>
@@ -185,8 +202,8 @@ export function renderAudienceBar(audienceMode) {
   return `
     <div class="audience-bar" role="region" aria-label="Enfoque de lectura">
       <div class="audience-bar-label">
-        <strong>Adaptación del discurso</strong>
-        <span>El territorio y la logística base son los mismos; elige el enfoque de lectura que prefieras.</span>
+        <strong>Modo de lectura</strong>
+        <span>Mismo territorio y logística; elige la profundidad del relato.</span>
       </div>
       <div class="audience-switch" role="group" aria-label="Seleccionar perfil de lector">
         <button
@@ -213,6 +230,7 @@ export function renderAudienceBar(audienceMode) {
 export function renderExpeditionCard(exp, audienceMode = 'explorer') {
   const isCatB = exp.category.startsWith('Categoría B');
   const content = audienceMode === 'academic' ? exp.academic : exp.explorer;
+  const topo = topoArtwork[exp.topoKey] || topoArtwork.desierto;
 
   return `
     <a
@@ -220,13 +238,27 @@ export function renderExpeditionCard(exp, audienceMode = 'explorer') {
       class="expedition-card ${isCatB ? 'cat-b' : ''}"
       data-nav-link
     >
-      <div class="expedition-meta-row">
-        <span class="status">${escapeHtml(exp.categoryShort)}</span>
-        <span class="badge-subtle">${escapeHtml(exp.duration)}</span>
+      <div class="expedition-visual">
+        ${topo}
+        <span class="expedition-cat-tag">${escapeHtml(exp.categoryShort)}</span>
       </div>
       <div class="card-label">${escapeHtml(exp.cardLabel)}</div>
       <h3>${escapeHtml(exp.title)}</h3>
       <p>${escapeHtml(content.summary)}</p>
+      <dl class="expedition-specs">
+        <div>
+          <dt>Duración</dt>
+          <dd>${escapeHtml(exp.durationShort)}</dd>
+        </div>
+        <div>
+          <dt>Logística</dt>
+          <dd>${escapeHtml(exp.transportShort)}</dd>
+        </div>
+        <div>
+          <dt>Territorio</dt>
+          <dd>${escapeHtml(exp.ecosystemShort)}</dd>
+        </div>
+      </dl>
       <div class="expedition-card-footer">
         <span class="text-link">Ver ficha completa ${icons.arrowUpRight()}</span>
       </div>
@@ -258,16 +290,17 @@ export function renderWhatsAppCta(
 }
 
 export function renderDestinationCard(dest) {
+  const topo = dest.topoKey ? topoArtwork[dest.topoKey] : '';
   const visual = dest.image
     ? `<img src="${escapeHtml(assetUrl(dest.image))}" alt="${escapeHtml(dest.imageAlt)}" />`
     : `<div class="territory-placeholder">
-         ${icons[dest.icon]()}
-         <span>ARCHIVO VISUAL EN PREPARACIÓN</span>
+         ${topo || icons[dest.icon]()}
+         <span>CARTOGRAFÍA VISUAL · EN DOCUMENTACIÓN</span>
        </div>`;
 
   return `
     <a href="${routeHref(`/destinos/${dest.slug}`)}" class="destination-card" data-nav-link>
-      <div class="card-photo">${visual}</div>
+      <div class="card-photo ${dest.image ? 'is-specimen-plate' : ''}">${visual}</div>
       <div class="card-label">${escapeHtml(dest.label)}</div>
       <div class="destination-card-title-row">
         <h3>${escapeHtml(dest.title)}</h3>
@@ -380,7 +413,7 @@ export function renderContactForm(formId = 'contact-form') {
             href="${whatsappHref('Hola COLOMBIA FÓSIL, quisiera mayor información sobre sus expediciones.')}"
             target="_blank"
             rel="noreferrer"
-            class="btn btn-whatsapp"
+            class="btn btn-outline btn-wa-outline"
           >
             ${icons.whatsapp()} Escribir directo por WhatsApp
           </a>

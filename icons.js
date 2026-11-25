@@ -52,3 +52,33 @@ export const icons = {
   alertTriangle: (cls = '') =>
     svgWrap('<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>', cls),
 };
+
+export const topoArtwork = {
+  vaupes: `
+    <svg class="topo-art" viewBox="0 0 360 220" fill="none" aria-hidden="true">
+      <path d="M20 175 C85 150, 120 195, 190 160 C250 130, 290 165, 345 140" stroke="currentColor" stroke-width="1.2" opacity="0.5"/>
+      <path d="M15 190 C90 168, 130 205, 200 176 C265 148, 300 178, 350 158" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+      <path d="M60 118 L92 64 L196 60 L238 112" stroke="currentColor" stroke-width="1.4" opacity="0.75"/>
+      <path d="M98 64 L106 112 M188 61 L180 112" stroke="currentColor" stroke-width="0.9" stroke-dasharray="3 3" opacity="0.45"/>
+      <path d="M120 84 C140 76, 162 84, 174 78" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+      <circle cx="282" cy="68" r="22" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+      <circle cx="282" cy="68" r="11" stroke="currentColor" stroke-width="0.9" opacity="0.55"/>
+    </svg>
+  `,
+  guaviare: `
+    <svg class="topo-art" viewBox="0 0 360 220" fill="none" aria-hidden="true">
+      <path d="M30 164 L90 76 L156 68 L224 78 L280 164" stroke="currentColor" stroke-width="1.4" opacity="0.75"/>
+      <path d="M122 164 C124 122, 140 102, 160 102 C180 102, 196 122, 198 164" stroke="currentColor" stroke-width="1.4" opacity="0.85"/>
+      <path d="M22 182 C110 164, 240 164, 340 182" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+      <path d="M268 72 C292 62, 316 74, 336 66" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+      <path d="M52 104 L68 104 M60 96 L60 112 M296 114 L312 114 M304 106 L304 122" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+    </svg>
+  `,
+  desierto: `
+    <svg class="topo-art" viewBox="0 0 360 120" fill="none" aria-hidden="true">
+      <path d="M10 92 L78 44 L134 72 L198 34 L268 78 L350 56" stroke="currentColor" stroke-width="1.4" opacity="0.7"/>
+      <path d="M10 104 C95 88, 175 112, 260 94 C300 86, 330 94, 350 90" stroke="currentColor" stroke-width="1" opacity="0.4"/>
+      <circle cx="298" cy="30" r="10" stroke="currentColor" stroke-width="1.1" opacity="0.6"/>
+    </svg>
+  `,
+};

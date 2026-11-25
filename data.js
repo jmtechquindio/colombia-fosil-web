@@ -39,6 +39,10 @@ export const expeditions = [
     category: 'Categoría A · Planes cortos (2–3 días)',
     categoryShort: 'Categoría A · Plan corto',
     duration: '3 días (3 despertares)',
+    durationShort: '3 días',
+    transportShort: 'Terrestre privado',
+    ecosystemShort: 'Zonas áridas y montaña',
+    topoKey: 'desierto',
     region: 'Zonas desérticas, valles interandinos y piedemonte',
     logisticsSummary: 'Transporte terrestre privado puerta a puerta desde la ciudad de origen.',
     accommodation:
@@ -99,6 +103,10 @@ export const expeditions = [
     category: 'Categoría B · Selva y territorios remotos',
     categoryShort: 'Categoría B · Selva remota',
     duration: '7 días (7 despertares)',
+    durationShort: '7 días',
+    transportShort: 'Chárter + Fluvial',
+    ecosystemShort: 'Escudo Guayanés',
+    topoKey: 'vaupes',
     region: 'Vaupés · Mitú, Raudal del Jirijirimó y Serranía de Morroco (Escudo Guayanés)',
     logisticsSummary:
       'Vuelos chárter en avioneta sobre la Serranía de Morroco, navegación fluvial en canoa con motor fuera de borda y operación bajo gobernanza indígena.',
@@ -190,6 +198,10 @@ export const expeditions = [
     category: 'Categoría B · Selva y territorios remotos',
     categoryShort: 'Categoría B · Transición amazónica',
     duration: '4 días (4 despertares)',
+    durationShort: '4 días',
+    transportShort: 'Terrestre + Fluvial',
+    ecosystemShort: 'Selva y La Lindosa',
+    topoKey: 'guaviare',
     region: 'Guaviare · San José del Guaviare, Puerta de Orión, Lagunas de Nare y Cerro Nuevo Tolima',
     logisticsSummary:
       'Transporte terrestre privado puerta a puerta desde Bogotá hacia San José del Guaviare y traslados rurales locales en vehículo veredal y fluvial.',
@@ -260,6 +272,7 @@ export const expeditions = [
 export const destinations = [
   {
     slug: 'vaupes',
+    topoKey: 'vaupes',
     label: 'PAISAJES FLUVIALES · TERRITORIO AMAZÓNICO',
     bannerEyebrow: 'Paisajes fluviales · Territorio amazónico',
     title: 'Vaupés',
@@ -284,6 +297,7 @@ export const destinations = [
   },
   {
     slug: 'guaviare',
+    topoKey: 'guaviare',
     label: 'PATRIMONIO CULTURAL · PAISAJES ROCOSOS',
     bannerEyebrow: 'Patrimonio cultural · Paisajes rocosos',
     title: 'Guaviare',

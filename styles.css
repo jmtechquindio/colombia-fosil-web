@@ -15,9 +15,9 @@
   --mineral: oklch(77% 0.055 84);
   --hero-shade: linear-gradient(
     90deg,
-    oklch(15% 0.025 210 / 0.05) 25%,
-    oklch(15% 0.025 210 / 0.55) 55%,
-    oklch(15% 0.025 210 / 0.86)
+    oklch(15% 0.025 210 / 0.04) 22%,
+    oklch(15% 0.025 210 / 0.58) 52%,
+    oklch(15% 0.025 210 / 0.88)
   );
   --hero-mobile-shade: linear-gradient(
     180deg,
@@ -25,10 +25,10 @@
     oklch(15% 0.025 210 / 0.5) 55%,
     oklch(15% 0.025 210 / 0.12)
   );
-  --hero-bottom: linear-gradient(0deg, oklch(13% 0.023 215 / 0.7), transparent);
-  --font-display: "Lora", Georgia, serif;
-  --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --hero-bottom: linear-gradient(0deg, oklch(13% 0.023 215 / 0.72), transparent);
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 *,
@@ -265,19 +265,20 @@ figure {
 }
 
 .brand-name {
-  font-size: 18px;
-  font-weight: 800;
+  font-size: 17px;
+  font-weight: 700;
   line-height: 1.1;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.04em;
 }
 
 .brand-tagline {
+  font-family: var(--font-mono);
   text-transform: uppercase;
   letter-spacing: 1.4px;
   color: var(--muted-foreground);
   margin-top: 3px;
-  font-size: 9px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .desktop-nav {
@@ -363,9 +364,9 @@ figure {
 
 /* Hero */
 .hero {
-  height: calc(100svh - 170px);
-  min-height: 580px;
-  max-height: 760px;
+  height: calc(100svh - 150px);
+  min-height: 600px;
+  max-height: 780px;
   color: var(--hero-foreground);
   position: relative;
   overflow: hidden;
@@ -374,7 +375,7 @@ figure {
 
 .hero-image {
   object-fit: cover;
-  object-position: center 45%;
+  object-position: 28% 45%;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -412,19 +413,20 @@ figure {
 }
 
 .eyebrow {
+  font-family: var(--font-mono);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 0.13em;
   align-items: center;
   gap: 12px;
-  font-size: 10px;
-  font-weight: 600;
+  font-size: 11px;
+  font-weight: 500;
   display: flex;
 }
 
 .eyebrow::before {
   content: "";
   background: currentColor;
-  width: 28px;
+  width: 24px;
   height: 1px;
   flex-shrink: 0;
 }
@@ -432,17 +434,19 @@ figure {
 .hero h1 {
   font-family: var(--font-display);
   max-width: 760px;
-  margin: 22px 0 16px;
-  font-size: 68px;
+  margin: 20px 0 14px;
+  font-size: clamp(2.85rem, 5vw, 4.4rem);
   font-weight: 500;
-  line-height: 1.06;
+  letter-spacing: -0.02em;
+  line-height: 1.03;
 }
 
 .hero-motto {
   font-family: var(--font-display);
-  margin: 0 0 23px;
-  font-size: 27px;
+  margin: 0 0 20px;
+  font-size: clamp(1.35rem, 2.2vw, 1.75rem);
   font-style: italic;
+  font-weight: 400;
 }
 
 .hero-copy {
@@ -513,6 +517,7 @@ figure {
 }
 
 .hero-index {
+  font-family: var(--font-mono);
   align-items: center;
   gap: 16px;
   font-size: 11px;
@@ -534,10 +539,10 @@ figure {
   border-bottom: 1px solid var(--border);
   justify-content: space-between;
   align-items: center;
-  gap: 24px;
-  min-height: 82px;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  padding-block: 24px;
   display: flex;
-  overflow-x: auto;
 }
 
 .discipline-item {
@@ -590,17 +595,18 @@ a.discipline-item:hover {
 
 .section h2 {
   font-family: var(--font-display);
-  margin: 18px 0;
-  font-size: 38px;
-  font-weight: 600;
-  line-height: 1.2;
+  margin: 16px 0;
+  font-size: clamp(1.85rem, 3vw, 2.45rem);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.18;
 }
 
 .section-copy {
   max-width: 65ch;
   color: var(--muted-foreground);
-  font-size: 18px;
-  line-height: 1.75;
+  font-size: 17.5px;
+  line-height: 1.7;
 }
 
 .section-heading {
@@ -713,11 +719,18 @@ a.discipline-item:hover {
 }
 
 .card-photo {
-  aspect-ratio: 1.2;
+  aspect-ratio: 1.25;
   background: var(--secondary);
-  margin-bottom: 21px;
+  margin-bottom: 20px;
   position: relative;
   overflow: hidden;
+  border-radius: 2px;
+}
+
+.card-photo.is-specimen-plate {
+  background: #f3efe6;
+  padding: 16px;
+  border: 1px solid var(--border);
 }
 
 .card-photo img {
@@ -732,11 +745,12 @@ a.discipline-item:hover {
 }
 
 .card-label {
-  letter-spacing: 1px;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--primary);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .destination-card-title-row {
@@ -763,27 +777,29 @@ a.discipline-item:hover {
 .destination-card h3 {
   font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 600;
-  line-height: 1.25;
+  font-weight: 500;
+  line-height: 1.2;
 }
 
 .destination-card p {
   color: var(--muted-foreground);
-  font-size: 16px;
-  line-height: 1.8;
-  margin-bottom: 14px;
+  font-size: 15.5px;
+  line-height: 1.62;
+  margin-bottom: 16px;
 }
 
 .status {
+  font-family: var(--font-mono);
   color: var(--primary);
   background: var(--secondary);
   align-items: center;
   gap: 6px;
-  padding: 5px 9px;
-  font-size: 12px;
-  font-weight: 600;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 500;
   display: inline-flex;
   align-self: flex-start;
+  border-radius: 2px;
 }
 
 .status::before {
@@ -797,26 +813,31 @@ a.discipline-item:hover {
 .territory-placeholder {
   background: var(--ink);
   height: 100%;
-  color: var(--hero-foreground);
+  color: var(--mineral);
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   display: flex;
-  padding: 20px;
+  padding: 18px;
   text-align: center;
+  position: relative;
 }
 
-.territory-placeholder svg {
-  opacity: 0.65;
-  width: 52px;
-  height: 52px;
+.territory-placeholder .topo-art {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  color: var(--mineral);
 }
 
 .territory-placeholder span {
-  letter-spacing: 1px;
-  font-size: 10px;
-  font-weight: 600;
+  font-family: var(--font-mono);
+  letter-spacing: 0.1em;
+  font-size: 10.5px;
+  font-weight: 500;
+  color: var(--hero-foreground);
+  opacity: 0.78;
 }
 
 /* Conservation dark band */
@@ -929,10 +950,11 @@ a.discipline-item:hover {
 .page-banner h1 {
   font-family: var(--font-display);
   max-width: 900px;
-  margin: 20px 0;
-  font-size: 50px;
-  font-weight: 600;
-  line-height: 1.15;
+  margin: 18px 0;
+  font-size: clamp(2.2rem, 4vw, 3.25rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
 }
 
 .page-banner p {
@@ -978,6 +1000,10 @@ main:focus {
   border-color: #18623d;
 }
 
+.btn-wa-outline svg {
+  color: #1f7a4c;
+}
+
 .whatsapp-cta-box {
   margin-top: 36px;
   border: 1px solid var(--border);
@@ -995,7 +1021,7 @@ main:focus {
 .whatsapp-cta-box h3 {
   font-family: var(--font-display);
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 500;
   margin-bottom: 6px;
   color: var(--foreground);
 }
@@ -1011,106 +1037,166 @@ main:focus {
 .audience-bar {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-end;
   justify-content: space-between;
-  gap: 16px;
-  padding: 18px 22px;
-  background: var(--muted);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  margin-bottom: 32px;
+  gap: 16px 28px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 34px;
 }
 
 .audience-bar-label {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 4px;
 }
 
 .audience-bar-label strong {
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--foreground);
+  letter-spacing: 0.12em;
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .audience-bar-label span {
-  font-size: 14px;
+  font-size: 14.5px;
   color: var(--muted-foreground);
 }
 
 .audience-switch {
   display: inline-flex;
-  background: var(--background);
-  border: 1px solid var(--border);
-  border-radius: 3px;
-  padding: 3px;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 22px;
 }
 
 .audience-btn {
   border: none;
+  border-bottom: 2px solid transparent;
   background: transparent;
-  padding: 8px 14px;
-  font-size: 13.5px;
+  padding: 8px 2px;
+  font-size: 14px;
   font-weight: 600;
-  border-radius: 2px;
   cursor: pointer;
   color: var(--muted-foreground);
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.audience-btn:hover {
+  color: var(--foreground);
 }
 
 .audience-btn[aria-pressed="true"] {
-  background: var(--primary);
-  color: var(--primary-foreground);
+  color: var(--primary);
+  border-bottom-color: var(--primary);
 }
 
 /* Expedition cards & detail blocks */
 .expedition-card {
-  border-top: 2px solid var(--primary);
   border-bottom: 1px solid var(--border);
-  padding: 24px 0;
+  padding: 0 0 24px;
   display: flex;
   flex-direction: column;
 }
 
-.expedition-card.cat-b {
-  border-top-color: var(--ink);
-}
-
-.expedition-meta-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-.badge-subtle {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11.5px;
-  font-weight: 600;
-  padding: 4px 9px;
+.expedition-visual {
   background: var(--muted);
-  color: var(--foreground);
+  border: 1px solid var(--border);
   border-radius: 2px;
+  padding: 18px 18px 14px;
+  margin-bottom: 18px;
+  position: relative;
+  overflow: hidden;
+  min-height: 126px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.expedition-card.cat-b .expedition-visual {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.expedition-visual .topo-art {
+  width: 100%;
+  height: 82px;
+  color: var(--primary);
+  opacity: 0.72;
+  transition: transform 0.35s ease;
+}
+
+.expedition-card.cat-b .expedition-visual .topo-art {
+  color: var(--mineral);
+  opacity: 0.88;
+}
+
+.expedition-card:hover .expedition-visual .topo-art {
+  transform: scale(1.03);
+}
+
+.expedition-cat-tag {
+  font-family: var(--font-mono);
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  border-radius: 2px;
+  background: var(--background);
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+.expedition-card.cat-b .expedition-cat-tag {
+  background: oklch(18% 0.03 229 / 0.85);
+  color: var(--mineral);
+  border-color: oklch(77% 0.055 84 / 0.35);
 }
 
 .expedition-card h3 {
   font-family: var(--font-display);
   font-size: 25px;
-  font-weight: 600;
-  line-height: 1.25;
-  margin-bottom: 10px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 8px 0 10px;
 }
 
 .expedition-card p {
   color: var(--muted-foreground);
-  font-size: 16px;
-  line-height: 1.75;
+  font-size: 15.5px;
+  line-height: 1.62;
+  margin-bottom: 18px;
+}
+
+.expedition-specs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding-block: 11px;
   margin-bottom: 16px;
+}
+
+.expedition-specs dt {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--muted-foreground);
+}
+
+.expedition-specs dd {
+  margin: 3px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--foreground);
+  line-height: 1.3;
 }
 
 .expedition-card-footer {
@@ -1119,7 +1205,6 @@ main:focus {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  padding-top: 8px;
 }
 
 .journey-list {
@@ -1391,12 +1476,13 @@ main:focus {
 }
 
 .detail-facts dt {
+  font-family: var(--font-mono);
   color: var(--muted-foreground);
   margin-bottom: 7px;
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  font-weight: 600;
+  letter-spacing: 0.08em;
+  font-weight: 500;
 }
 
 .detail-facts dd {
@@ -1479,7 +1565,8 @@ main:focus {
 }
 
 .fossil-credit {
-  font-size: 12px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
   color: var(--muted-foreground);
   margin-top: 10px;
 }
@@ -1501,9 +1588,10 @@ main:focus {
 }
 
 .fossil-meta dt {
-  font-size: 11px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--muted-foreground);
 }
 
@@ -1572,8 +1660,9 @@ main:focus {
 
 .resource-number {
   color: var(--mineral);
-  font-family: var(--font-display);
-  font-size: 36px;
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -1587,13 +1676,14 @@ main:focus {
 .resource p {
   color: var(--muted-foreground);
   font-size: 15px;
-  line-height: 1.75;
+  line-height: 1.7;
   margin-bottom: 10px;
 }
 
 .resource-meta {
+  font-family: var(--font-mono);
   color: var(--muted-foreground);
-  font-size: 12px;
+  font-size: 11.5px;
 }
 
 .resource-arrow {
@@ -1747,34 +1837,67 @@ main:focus {
 /* Footer */
 .site-footer {
   border-top: 1px solid var(--border);
-  padding-block: 42px;
+  padding-block: 52px 36px;
 }
 
-.footer-top {
-  justify-content: space-between;
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr 1fr;
+  gap: 48px;
   align-items: start;
-  gap: 40px;
-  display: flex;
 }
 
-.footer-links {
-  gap: 28px;
-  font-size: 13px;
+.footer-manifesto {
+  color: var(--muted-foreground);
+  font-size: 14.5px;
+  line-height: 1.65;
+  max-width: 40ch;
+  margin-top: 16px;
+}
+
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--foreground);
   font-weight: 600;
-  display: flex;
-  flex-wrap: wrap;
+  margin-bottom: 14px;
 }
 
-.footer-links a:hover {
+.footer-col-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+}
+
+.footer-col-links a:hover {
   color: var(--primary);
 }
 
+.footer-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #1f7a4c;
+  font-weight: 600;
+}
+
+.footer-wa-link svg {
+  width: 15px;
+  height: 15px;
+}
+
 .footer-bottom {
+  font-family: var(--font-mono);
   border-top: 1px solid var(--border);
   color: var(--muted-foreground);
   justify-content: space-between;
   gap: 20px;
-  margin-top: 35px;
+  margin-top: 38px;
   padding-top: 22px;
   font-size: 11px;
   display: flex;
@@ -1919,13 +2042,13 @@ main:focus {
   .resource-arrow {
     justify-self: start;
   }
-  .footer-top {
-    flex-direction: column;
-    gap: 24px;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
-  .footer-links {
-    flex-direction: column;
-    gap: 14px;
+  .expedition-specs {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
 }
 
