@@ -624,7 +624,7 @@ export const teamMembers = [
   {
     index: '03',
     initials: 'JA',
-    photo: null,
+    photo: '/assets/team-jorge.jpg',
     name: 'Jorge Alberto Aristizábal Moreno',
     role: 'Tecnología · Inteligencia artificial · Ecoturismo y divulgación del patrimonio',
     facts: [
@@ -697,5 +697,32 @@ export const scienceResources = [
     externalUrl: 'https://www2.sgc.gov.co/LibroGeologiaColombia/tgc/sgcpubesp35201901.pdf',
     reference:
       'Gómez, J. y colaboradores · Servicio Geológico Colombiano. El contexto geológico del territorio colombiano. 2020. Fuente original enlazada arriba.',
+  },
+];
+
+export const explorationReviews = [
+  {
+    author: 'Camila Restrepo',
+    role: 'Exploradora · Medellín',
+    expedition: 'Trekking Georupestre del Desierto',
+    rating: 5,
+    quote:
+      'Nunca imaginé caminar por un desierto entendiendo que millones de años atrás fue un mar antiguo. La lectura de los estratos y el respeto absoluto por no tocar ni extraer fósiles hicieron de los tres días una experiencia transformadora.',
+  },
+  {
+    author: 'Dr. Andrés Felipe Morales',
+    role: 'Docente universitario · Bogotá',
+    expedition: 'Trekking Georupestre a la Guyana · Vaupés y Morroco',
+    rating: 5,
+    quote:
+      'El equilibrio entre el rigor geológico sobre el Escudo Guayanés y la gobernanza real de las comunidades taiwano y piapoco es admirable. Desde el sobrevuelo hasta las malocas y los aportes escolares, todo tiene coherencia científica y humana.',
+  },
+  {
+    author: 'Laura Sofía Mendoza',
+    role: 'Bióloga y fotógrafa · Cali',
+    expedition: 'Trekking Georupestre Guaviare',
+    rating: 5,
+    quote:
+      'Visitar La Lindosa, ver la Macarenia clavigera en caños cristalinos y navegar Lagunas de Nare entre toninas sin horarios apresurados se sintió auténtico de principio a fin. La organización logística y los anfitriones locales fueron impecables.',
   },
 ];

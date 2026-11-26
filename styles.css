@@ -1024,11 +1024,17 @@ a.discipline-item:hover {
   border: 1px dashed oklch(76% 0.015 190);
 }
 
+.team-photo-box.has-photo {
+  border-style: solid;
+  border-color: var(--border);
+  background: #ffffff;
+}
+
 .team-photo-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 .team-photo-placeholder {
@@ -1624,6 +1630,66 @@ main:focus {
   line-height: 1.45;
   color: var(--muted-foreground);
   padding: 10px 4px 2px;
+}
+
+/* Exploration reviews */
+.review-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: 0 2px 12px oklch(18% 0.02 220 / 0.03);
+}
+
+.review-stars {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: oklch(68% 0.14 78);
+}
+
+.review-star {
+  width: 16px;
+  height: 16px;
+}
+
+.review-quote {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 17.5px;
+  line-height: 1.62;
+  color: var(--foreground);
+}
+
+.review-author {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.review-author strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.review-author span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-foreground);
+}
+
+.reviews-note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted-foreground);
+  margin-top: 18px;
 }
 
 /* Services cards */

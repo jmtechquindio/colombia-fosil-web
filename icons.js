@@ -51,6 +51,8 @@ export const icons = {
     svgWrap('<path d="M20 6 9 17l-5-5"/>', cls),
   alertTriangle: (cls = '') =>
     svgWrap('<path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/>', cls),
+  star: (cls = '') =>
+    `<svg class="${cls}" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.93 5.94 6.56.95-4.74 4.62 1.12 6.53L12 17.46l-5.87 3.08 1.12-6.53L2.51 9.39l6.56-.95L12 2.5z"/></svg>`,
 };
 
 export const topoArtwork = {

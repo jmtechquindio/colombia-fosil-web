@@ -12,6 +12,7 @@ import {
   teamMembers,
   fossilsCatalog,
   scienceResources,
+  explorationReviews,
 } from './data.js';
 import {
   BASE_PATH,
@@ -127,6 +128,24 @@ function renderHomePage() {
         <h3>${escapeHtml(v.title)}</h3>
         <p>${escapeHtml(v.copy)}</p>
       </div>
+    `
+    )
+    .join('');
+
+  const reviewCards = explorationReviews
+    .map(
+      (rev) => `
+      <article class="review-card">
+        <div class="review-stars" aria-label="${rev.rating} de 5 estrellas">
+          ${Array.from({ length: rev.rating }, () => icons.star('review-star')).join('')}
+        </div>
+        <div class="card-label">${escapeHtml(rev.expedition)}</div>
+        <blockquote class="review-quote">“${escapeHtml(rev.quote)}”</blockquote>
+        <div class="review-author">
+          <strong>${escapeHtml(rev.author)}</strong>
+          <span>${escapeHtml(rev.role)}</span>
+        </div>
+      </article>
     `
     )
     .join('');
@@ -304,6 +323,24 @@ function renderHomePage() {
             Construir una experiencia académica ${icons.arrowUpRight()}
           </a>
         </div>
+      </section>
+
+      <section class="container-shell section section-tight-top" aria-labelledby="reviews-heading">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow text-primary">OPINIONES DE LAS EXPLORACIONES</div>
+            <h2 id="reviews-heading">Lo que dicen quienes recorren el territorio.</h2>
+          </div>
+          <a href="${routeHref('/expediciones')}" class="text-link" data-nav-link>
+            Ver expediciones ${icons.arrowUpRight()}
+          </a>
+        </div>
+        <div class="card-grid">
+          ${reviewCards}
+        </div>
+        <p class="reviews-note">
+          Reseñas ilustrativas de muestra mientras consolidamos el archivo público de testimonios verificados.
+        </p>
       </section>
 
       <section class="bg-muted section">
@@ -818,7 +855,7 @@ function renderNosotrosPage() {
 
       return `
       <article class="team-card">
-        <div class="team-photo-box">
+        <div class="team-photo-box ${member.photo ? 'has-photo' : ''}">
           ${photoSlot}
         </div>
         <div class="team-card-head">
