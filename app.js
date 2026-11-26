@@ -428,6 +428,29 @@ function renderExpedicionDetailPage(slug) {
     `
     : '';
 
+  const galleryBlock = exp.gallery?.length
+    ? `
+      <div class="expedition-gallery-section">
+        <h2>Registro fotográfico de campo</h2>
+        <p class="section-copy">
+          Fotografías documentales de expediciones previas en este tipo de territorio.
+        </p>
+        <div class="expedition-gallery-grid">
+          ${exp.gallery
+            .map(
+              (photo) => `
+              <figure class="gallery-tile">
+                <img src="${escapeHtml(assetUrl(photo.src))}" alt="${escapeHtml(photo.alt)}" loading="lazy" />
+                <figcaption>${escapeHtml(photo.caption)}</figcaption>
+              </figure>
+            `
+            )
+            .join('')}
+        </div>
+      </div>
+    `
+    : '';
+
   return {
     title: `${exp.title} | COLOMBIA FÓSIL`,
     html: `
@@ -467,6 +490,8 @@ function renderExpedicionDetailPage(slug) {
                 ${includesHtml}
               </ul>
             </div>
+
+            ${galleryBlock}
 
             ${renderWhatsAppCta(
               'Para mayor información y diseño de tu salida',
@@ -1517,6 +1542,13 @@ function renderPrivacidadPage() {
               >
                 Archivo original y licencia (Wikimedia Commons) ${icons.arrowUpRight()}
               </a>
+            </p>
+
+            <h2>Archivo fotográfico de campo (COLOMBIA FÓSIL)</h2>
+            <p>
+              Las galerías de expedición en las fichas de <em>Desierto</em> y <em>Guyana · Vaupés</em>
+              corresponden al archivo documental propio de exploraciones previas aportado por el
+              equipo de COLOMBIA FÓSIL.
             </p>
           </div>
         </div>

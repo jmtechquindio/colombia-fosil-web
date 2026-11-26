@@ -101,6 +101,48 @@ export const expeditions = [
       'Guianza científica especializada y entradas a los sectores de interés.',
       'Seguro de vida y asistencia médica para actividades en territorio.',
     ],
+    gallery: [
+      {
+        src: '/assets/expeditions/desierto-canon-caminante.jpg',
+        alt: 'Caminante recorriendo cañón entre cárcavas y suelos agrietados en el desierto',
+        caption: 'Travesía por cañones de erosión hídrica y eólica · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/desierto-estratos-multicolor.jpg',
+        alt: 'Ladera árida con horizontes estratigráficos ocres, rojizos y grises',
+        caption: 'Lectura estratigráfica en afloramientos multicolores · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/desierto-zona-gris.jpg',
+        alt: 'Zona gris sedimentaria del desierto con cordillera al fondo',
+        caption: 'Horizontes sedimentarios grises asociados a antiguos ambientes · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/desierto-conglomerado.jpg',
+        alt: 'Bloque de conglomerado con clastos redondeados en el desierto',
+        caption: 'Conglomerados expuestos por meteorización diferencial · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/desierto-cresta-expedicionarios.jpg',
+        alt: 'Dos expedicionarios sobre crestas rojas erosionadas con paisaje andino al fondo',
+        caption: 'Caminata interpretativa por crestas arcillosas · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/desierto-carcavas-nube.jpg',
+        alt: 'Relieve erosionado ocre bajo cielo despejado con nube estirada',
+        caption: 'Morfología árida y cielos abiertos del desierto · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/desierto-campo-estratos.jpg',
+        alt: 'Geólogo en campo frente a secuencia de estratos ocres, grises y púrpuras',
+        caption: 'Acompañamiento geológico en secuencias estratigráficas · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/desierto-atardecer-montana.jpg',
+        alt: 'Atardecer sobre la cordillera desde ruta de ascenso en montaña',
+        caption: 'Cierre de jornada en ascenso de montaña al ocaso · Archivo de campo COLOMBIA FÓSIL',
+      },
+    ],
   },
   {
     slug: 'trekking-georupestre-guyana',
@@ -200,6 +242,33 @@ export const expeditions = [
       'Hospedaje completo: hotel en Mitú (acomodación individual por defecto o según disponibilidad) y carpas o hamacas en campamentos y malocas comunitarias.',
       'Permisos de ingreso comunitarios, guianza local asignada por los resguardos y guianza científica especializada.',
       'Seguro de vida y asistencia médica para expediciones en territorios remotos.',
+    ],
+    gallery: [
+      {
+        src: '/assets/expeditions/guyana-ventana-cielo.jpg',
+        alt: 'Explorador en la salida de caverna en cuarcitas frente al dosel de la selva amazónica',
+        caption: 'La Ventana del Cielo: salida de cavernas sobre el dosel amazónico · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/guyana-taninos-pared.jpg',
+        alt: 'Pared estratificada de tepuy con bromelias y agua rojiza por taninos',
+        caption: 'Aguas rojizas por taninos y estratos devónicos del tepuy · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/guyana-cascada-estratos.jpg',
+        alt: 'Cascada escalonada descendiendo por estratos horizontales del tepuy en selva',
+        caption: 'Cañadas y cascadas en escarpes estratificados del tepuy · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/guyana-raudal-equipo.jpg',
+        alt: 'Expedicionarios y anfitriones locales pasando equipo sobre raudal cubierto de plantas acuáticas',
+        caption: 'Trabajo en equipo y navegación en raudales amazónicos · Archivo de campo COLOMBIA FÓSIL',
+      },
+      {
+        src: '/assets/expeditions/guyana-roca-acanalada.jpg',
+        alt: 'Afloramiento rocoso oscuro con canales de disolución fluvial y exploradores en campo',
+        caption: 'Reconocimiento de rocas acanaladas en sector amazónico · Archivo de campo COLOMBIA FÓSIL',
+      },
     ],
   },
   {
@@ -430,6 +499,9 @@ export const experiences = [
     location: 'Serranía de Morroco (Vaupés) y sectores del Guaviare',
     learningObjective:
       'Reconocer procesos de formación por fracturamiento estructural y criterios de conservación de ambientes subterráneos.',
+    image: '/assets/expeditions/guyana-ventana-cielo.jpg',
+    imageAlt: 'Salida de cavernas en cuarcitas con vista panorámica al dosel de la selva amazónica',
+    imageCredit: 'Salida de caverna en tepuy del Escudo Guayanés · Archivo de campo COLOMBIA FÓSIL.',
   },
   {
     slug: 'caminar-para-comprender',
