@@ -592,7 +592,7 @@ export const teamMembers = [
   {
     index: '01',
     initials: 'DD',
-    photo: null,
+    photo: '/assets/team-diego.jpg',
     name: 'Diego Díaz',
     role: 'Geólogo · Guía líder de expediciones geoarqueológicas',
     facts: [
