@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jmtechquindio.github.io/colombia-fosil-web/sitemap.xml

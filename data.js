@@ -7,6 +7,7 @@ export const navItems = [
   { label: 'Servicios', path: '/servicios' },
   { label: 'Destinos', path: '/destinos' },
   { label: 'Fósiles', path: '/fosiles' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Información', path: '/informacion' },
   { label: 'Quiénes somos', path: '/nosotros' },
 ];
@@ -14,6 +15,7 @@ export const navItems = [
 export const footerLinks = [
   { label: 'Expediciones', path: '/expediciones' },
   { label: 'Nuestro proyecto', path: '/nosotros' },
+  { label: 'Blog científico', path: '/blog' },
   { label: 'Ciencia y conocimiento', path: '/ciencia' },
   { label: 'Contacto', path: '/contacto' },
   { label: 'Privacidad y créditos', path: '/privacidad' },
@@ -654,6 +656,249 @@ export const fossilsCatalog = [
       'Lámina fotográfica de ammonites publicada por Pedro Patarroyo. La Formación Paja corresponde al Cretácico inferior; esta ficha no asigna una edad precisa a cada ejemplar ni identifica un lugar de recolección.',
     photoSourceUrl: 'https://commons.wikimedia.org/wiki/File:Paja_Formation_-_Ammonites.jpg',
     geoContextUrl: 'https://commons.wikimedia.org/wiki/Category:Paja_Formation',
+  },
+  {
+    id: 'titanoboa-cerrejonensis-uf-igm-2',
+    title: 'Titanoboa cerrejonensis (Paratipo UF/IGM 2)',
+    image: '/assets/blog/titanoboa-uf-igm-2-escala.jpg',
+    imageAlt: 'Vértebra precloacal paratipo UF/IGM 2 de Titanoboa cerrejonensis con barra de escala',
+    credit: 'Anfecaro / Gretarsson · CC BY 4.0 · Wikimedia Commons',
+    period: 'Paleoceno',
+    location: 'Formación Cerrejón · La Guajira',
+    type: 'Vertebrados (Serpentes)',
+    description:
+      'Vértebra precloacal fósil (paratipo UF/IGM 2) exhibida en el Museo Geológico Nacional José Royo y Gómez. Descrita junto al holotipo UF/IGM 1 por Head et al. (2009), estima ~12.8 m de longitud y paleotemperaturas tropicales de ~30–34 °C.',
+    photoSourceUrl:
+      'https://commons.wikimedia.org/wiki/File:Titanoboa_paratype_precloacal_vertebra_UF-IGM_2_edited_with_scale_bar.jpg',
+    geoContextUrl: 'https://doi.org/10.1038/nature07671',
+  },
+];
+
+export const blogCategories = ['Todas', 'Paleontología', 'Patrimonio y método'];
+
+export const blogPosts = [
+  {
+    slug: 'titanoboa-cerrejonensis-la-guajira-paleoceno',
+    title: 'Titanoboa cerrejonensis: cómo una vértebra fósil de La Guajira reveló el clima del Paleoceno',
+    seoTitle: 'Titanoboa cerrejonensis en Colombia: fósil real, tamaño y clima del Paleoceno | COLOMBIA FÓSIL',
+    seoDescription:
+      'Conoce la evidencia científica verificada de Titanoboa cerrejonensis en la Formación Cerrejón (La Guajira): vértebras UF/IGM 1 y UF/IGM 2, longitud estimada, paleoclima de 30–34 °C y dónde ver su registro en Colombia.',
+    keywords: [
+      'Titanoboa cerrejonensis',
+      'fósiles en Colombia',
+      'Formación Cerrejón La Guajira',
+      'Paleoceno Colombia',
+      'Museo Geológico Nacional José Royo y Gómez',
+      'paleontología colombiana',
+    ],
+    category: 'Paleontología',
+    statusBadge: 'Registro verificado',
+    publishedAt: '2026-11-27',
+    readingTime: '5 min de lectura',
+    period: 'Paleoceno (~60–58 Ma)',
+    region: 'Mina del Cerrejón · La Guajira',
+    coverImage: '/assets/blog/titanoboa-uf-igm-2-escala.jpg',
+    coverAlt:
+      'Fotografía con barra de escala de la vértebra precloacal paratipo UF/IGM 2 de Titanoboa cerrejonensis',
+    coverCredit: 'Anfecaro / Gretarsson vía Wikimedia Commons · CC BY 4.0',
+    videoUrl: '/assets/video/ep01_titanoboa_horizontal_16x9.mp4',
+    videoPoster: '/assets/blog/titanoboa-paleoclima-30-34.png',
+    videoDuration: '57 s',
+    videoNote:
+      'Video divulgativo oficial de COLOMBIA FÓSIL (v1.0.0). Combina fotografías reales de colección con una escena breve rotulada explícitamente como Reconstrucción artística.',
+    excerpt:
+      'A partir de vértebras fósiles de la Formación Cerrejón, Head et al. (2009) describieron la serpiente más grande documentada y modelaron temperaturas tropicales de 30 a 34 °C hace 60 millones de años.',
+    factsSummary: [
+      { label: 'Taxón verificado', value: 'Titanoboa cerrejonensis Head et al., 2009' },
+      { label: 'Unidad y edad', value: 'Formación Cerrejón · Paleoceno (~60–58 Ma)' },
+      { label: 'Localidad', value: 'Cerrejón, La Guajira, Colombia' },
+      { label: 'Ejemplares clave', value: 'Holotipo UF/IGM 1 · Paratipo UF/IGM 2 (SGC / UF)' },
+      { label: 'Estimación alométrica', value: '~12.8 m (~13 m) de longitud · ~1,135 kg' },
+      { label: 'Inferencia climática', value: '~30–34 °C de temperatura media anual tropical' },
+    ],
+    sections: [
+      {
+        heading: 'Qué sabemos con certeza a partir del registro fósil',
+        paragraphs: [
+          'Después de la extinción de los dinosaurios no avianos, los ecosistemas del norte de Suramérica evolucionaron hacia selvas húmedas tropicales muy cálidas. En estratos de la Formación Cerrejón (La Guajira, Colombia), datados en el Paleoceno (~60 a 58 millones de años), investigadores liderados por Jason J. Head publicaron en 2009 en la revista Nature el hallazgo de Titanoboa cerrejonensis.',
+          'La descripción formal se apoya en vértebras precloacales fósiles —entre ellas el holotipo UF/IGM 1 y el paratipo UF/IGM 2— vinculadas conjuntamente a la University of Florida y al entonces Ingeominas (hoy Servicio Geológico Colombiano, Museo Geológico Nacional José Royo y Gómez).',
+        ],
+      },
+      {
+        heading: 'Cómo se calculó su tamaño y el paleoclima de 30 a 34 °C',
+        paragraphs: [
+          'En biología y paleontología no se encontró un esqueleto articulado completo de Titanoboa. Sin embargo, al comparar mediante modelos alométricos el tamaño relativo de sus vértebras troncales con el de serpientes boidas actuales, Head et al. (2009) estimaron una longitud cercana a 12.8 metros (frecuentemente redondeada a ~13 m) y una masa corporal aproximada de 1,135 kilogramos.',
+          'Dado que las serpientes son ectotermas y dependen del calor ambiental para sostener su metabolismo, ese porte corporal sirvió para proponer temperaturas medias anuales ecuatoriales de entre 30 y 34 °C durante el Paleoceno. En paralelo, el estudio paleobotánico de Wing et al. (2009) en PNAS documentó a partir de hojas fósiles de Cerrejón uno de los registros más antiguos de selva lluviosa neotropical moderna.',
+        ],
+      },
+      {
+        heading: 'Evidencia visual: fósiles reales frente a reconstrucción artística',
+        paragraphs: [
+          'Para divulgar con rigor científico es indispensable distinguir la evidencia física de las representaciones visuales. Las piezas exhibidas en vitrina en el Museo Geológico Nacional permiten observar la escala comparativa frente a una anaconda verde actual sin recurrir a exageraciones cinematográficas.',
+        ],
+      },
+    ],
+    evidenceGallery: [
+      {
+        image: '/assets/blog/titanoboa-uf-igm-2-museo.jpg',
+        alt: 'Vértebra fósil original de Titanoboa cerrejonensis en exhibición en el Museo Geológico Nacional José Royo y Gómez',
+        caption: 'Vértebra fósil original (UF/IGM 2) en el Museo Geológico Nacional José Royo y Gómez, Bogotá.',
+        credit: 'Anfecaro vía Wikimedia Commons · CC0 1.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Titanoboa_paratype_precloacal_vertebra_UF-IGM_2.jpg',
+      },
+      {
+        image: '/assets/blog/titanoboa-moldes-mgn.jpg',
+        alt: 'Moldes comparativos de vértebras dorsales de Titanoboa y anaconda moderna en el Museo Geológico Nacional',
+        caption: 'Moldes comparativos de vértebra dorsal de Titanoboa y una anaconda moderna (réplicas de exhibición, no hueso original).',
+        credit: 'Rextron vía Wikimedia Commons · CC BY-SA 4.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Titanoboa_vertebra_2.jpg',
+      },
+      {
+        image: '/assets/blog/titanoboa-paleoclima-30-34.png',
+        alt: 'Gráfico de paleotemperatura ecuatorial estimada (30 a 34 grados Celsius) según Head et al. 2009',
+        caption: 'Síntesis del modelo paleoclimático de 30–34 °C (interpretación científica sujeta a revisión).',
+        credit: 'COLOMBIA FÓSIL · Basado en Head et al. (2009)',
+        sourceUrl: 'https://doi.org/10.1038/nature07671',
+      },
+    ],
+    whatWeDoNotClaim: [
+      'No afirmamos que exista un esqueleto completo articulado de Titanoboa en Colombia: los cálculos parten de vértebras y modelos alométricos.',
+      'No presentamos los moldes comparativos de museo como hueso original ni la secuencia animada del video como fotografía documental.',
+      'No incluimos comportamientos de cine de monstruos ni medidas no verificadas directamente en tablas primarias.',
+    ],
+    faq: [
+      {
+        question: '¿Dónde encontraron los fósiles de Titanoboa cerrejonensis?',
+        answer:
+          'En rocas del Paleoceno (~60–58 millones de años) de la Formación Cerrejón, en la mina del Cerrejón, departamento de La Guajira, Colombia.',
+      },
+      {
+        question: '¿Cuánto medía Titanoboa según la evidencia científica?',
+        answer:
+          'El estudio original de Head et al. (2009) estimó una longitud cercana a 12.8 metros (~13 m) y una masa aproximada de 1,135 kg mediante alometría vertebral.',
+      },
+      {
+        question: '¿Dónde se puede ver material de Titanoboa en Colombia?',
+        answer:
+          'El paratipo UF/IGM 2 y moldes comparativos han sido exhibidos en el Museo Geológico Nacional José Royo y Gómez del Servicio Geológico Colombiano en Bogotá.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Head, J. J. et al. (2009). Giant boid snake from the Palaeocene neotropics reveals hotter past equatorial temperatures. Nature, 457(7231), 715–717.',
+        url: 'https://doi.org/10.1038/nature07671',
+      },
+      {
+        label: 'Wing, S. L. et al. (2009). Late Paleocene fossils from the Cerrejón Formation, Colombia, are the earliest record of Neotropical rainforest. PNAS, 106(44), 18627–18632.',
+        url: 'https://doi.org/10.1073/pnas.0905130106',
+      },
+    ],
+  },
+  {
+    slug: 'como-se-verifica-un-fosil-patrimonio-paleontologico-colombia',
+    title: 'Cómo se verifica un fósil en Colombia: del hallazgo científico a la divulgación sin mitos',
+    seoTitle: 'Cómo se verifica un fósil y el patrimonio paleontológico en Colombia | COLOMBIA FÓSIL',
+    seoDescription:
+      'Metodología de verificación científica de COLOMBIA FÓSIL: Decreto 1353 de 2018, INGEP del SGC, separación entre hecho, estimación y reconstrucción artística, y trazabilidad fotográfica.',
+    keywords: [
+      'patrimonio paleontológico Colombia',
+      'Decreto 1353 de 2018',
+      'INGEP Servicio Geológico Colombiano',
+      'turismo geoarqueológico Colombia',
+      'divulgación paleontológica',
+    ],
+    category: 'Patrimonio y método',
+    statusBadge: 'Guía científica',
+    publishedAt: '2026-11-27',
+    readingTime: '4 min de lectura',
+    period: 'Normativa y metodología',
+    region: 'Colombia · SGC / ICANH',
+    coverImage: '/assets/ammonites-hd.jpg',
+    coverAlt: 'Lámina documental de ammonites de la Formación Paja publicada por Pedro Patarroyo',
+    coverCredit: 'Pedro Patarroyo · 2009 · CC BY 3.0 · Wikimedia Commons',
+    videoUrl: null,
+    videoPoster: null,
+    videoDuration: null,
+    videoNote: null,
+    excerpt:
+      'Por qué una fotografía bonita o una cita suelta no bastan para validar un fósil: el método de trazabilidad, licencias y protección patrimonial que aplica COLOMBIA FÓSIL antes de publicar.',
+    factsSummary: [
+      { label: 'Marco legal colombiano', value: 'Decreto 1353 de 2018 · Resolución D-192 de 2022 (SGC)' },
+      { label: 'Inventario oficial', value: 'INGEP — Servicio Geológico Colombiano' },
+      { label: 'Regla editorial clave', value: 'Separar hecho, estimación y reconstrucción artística' },
+      { label: 'Ética de campo', value: 'Cero extracción, compra o alteración del patrimonio' },
+    ],
+    sections: [
+      {
+        heading: '1. Cita primaria y código de espécimen antes que titulares llamativos',
+        paragraphs: [
+          'En divulgación sobre paleontología circulan con frecuencia imágenes de fósiles de otros países atribuidas por error a yacimientos colombianos, o cifras sacadas de contexto. Antes de dar por verificado un dato, contrastamos la publicación científica revisada por pares (DOI o monografía institucional), la unidad estratigráfica y el número de catálogo bajo custodia museológica.',
+          'Cuando un ejemplar mantiene incertidumbre taxonómica —por ejemplo calificadores como cf., aff. o indet.— la ficha conserva esa cautela exactamente como aparece en la literatura.',
+        ],
+      },
+      {
+        heading: '2. Patrimonio geológico y paleontológico bajo normativa vigente',
+        paragraphs: [
+          'En Colombia, la gestión integral del patrimonio geológico y paleontológico se articula mediante el Servicio Geológico Colombiano (SGC), el Decreto 1353 de 2018, la Resolución D-192 de 2022 y el Inventario Nacional Geológico y Paleontológico (INGEP). En salidas de campo que también involucran arte rupestre o bienes arqueológicos, se respeta de igual modo el marco institucional del ICANH.',
+          'Por esa razón, nuestras expediciones de turismo geoarqueológico tienen un principio innegociable: observar para comprender, sin extraer piezas, sin intervenir sitios y restringiendo coordenadas sensibles cuando la protección patrimonial lo exige.',
+        ],
+      },
+      {
+        heading: '3. Licencias transparentes y rótulos explícitos en reconstrucciones',
+        paragraphs: [
+          'Una fotografía científica en un artículo no implica licencia libre automática, ni cualquier enlace web demuestra correspondencia con un ejemplar colombiano. Cada imagen publicada pasa por comprobación individual de autoría, licencia (CC0, CC BY, CC BY-SA o permiso expreso) y espécimen asociado. Cuando una pieza visual utiliza reconstrucción artística para ilustrar paleoambientes, se rotula visiblemente para no confundirla con evidencia fósil directa.',
+        ],
+      },
+    ],
+    evidenceGallery: [],
+    whatWeDoNotClaim: [
+      'No sustituimos conceptos técnicos oficiales del SGC ni del ICANH ni autorizamos excavaciones o recolecciones.',
+      'No publicamos como verificados registros cuya imagen o referencia primaria presente conflictos sin resolver.',
+    ],
+    faq: [
+      {
+        question: '¿Se pueden recoger o comprar fósiles durante las expediciones?',
+        answer:
+          'No. Todas las experiencias de COLOMBIA FÓSIL operan bajo conservación estricta: observar, documentar e interpretar en campo sin extraer ni comercializar material patrimonial.',
+      },
+      {
+        question: '¿Por qué algunas investigaciones aparecen listadas como "en revisión científica"?',
+        answer:
+          'Porque preferimos bloquear temporalmente un tema mientras cotejamos artículos primarios, códigos de museo o derechos de fotografía antes que publicar datos imprecisos.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Servicio Geológico Colombiano (SGC). Patrimonio Geológico y Paleontológico / Decreto 1353 de 2018 e INGEP.',
+        url: 'https://www2.sgc.gov.co/patrimonio/Paginas/patrimonio-geologico.aspx',
+      },
+      {
+        label: 'Gómez, J. et al. (2020). Physiographic and geological setting of the Colombian territory. The Geology of Colombia, Vol. 1, pp. 1–16 (SGC).',
+        url: 'https://doi.org/10.32685/pub.esp.35.2019.01',
+      },
+      {
+        label: 'ICANH. La Lindosa: Área Arqueológica Protegida y participación comunitaria.',
+        url: 'https://www.icanh.gov.co/prensa/actualidad-icanh/lindosa-nueva-area-arqueologica-colombia',
+      },
+    ],
+  },
+];
+
+export const blogPipelineQueue = [
+  {
+    title: 'Purussaurus neivensis en La Venta (Huila)',
+    status: 'En revisión científica',
+    note: 'Cotejando holotipo USNM 10889 (Mook, 1941), ejemplares UCMP y fotografía verificada de espécimen colombiano.',
+  },
+  {
+    title: 'Pterygotus cf. P. bolivianus en Boyacá',
+    status: 'En revisión científica',
+    note: 'Cotejando ejemplar SGC-MGJRG.2018.I.5 (Olive et al., 2019) y gestión de imagen autorizada del Museo Geológico Nacional.',
+  },
+  {
+    title: 'Pterosaurios de la Formación Rosablanca (Zapatoca)',
+    status: 'En revisión científica',
+    note: 'Cotejando UR-CP-0002 y UR-CP-0003 (Cadena, Unwin & Martill, 2020) y documentación visual con licencia.',
   },
 ];
 

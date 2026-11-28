@@ -11,6 +11,9 @@ import {
   institutionCards,
   teamMembers,
   fossilsCatalog,
+  blogCategories,
+  blogPosts,
+  blogPipelineQueue,
   scienceResources,
   explorationReviews,
 } from './data.js';
@@ -48,6 +51,8 @@ const state = {
   audienceMode: 'explorer',
   activeExpeditionCategory: 'Todas',
   activeExperienceFilter: 'Todas',
+  activeBlogCategory: 'Todas',
+  blogSearch: '',
   fossilFilters: {
     period: '',
     location: '',
@@ -1252,7 +1257,7 @@ function renderInformacionPage() {
         'Un espacio para consultar el registro fósil, conocer el territorio y acceder a fuentes públicas oficiales que respaldan nuestras expediciones.'
       )}
       <section class="container-shell section">
-        <div class="grid-2-wide">
+        <div class="grid-3-info">
           <article class="info-card">
             <img
               src="${assetUrl('/assets/ammonites-hd.jpg')}"
@@ -1266,6 +1271,23 @@ function renderInformacionPage() {
             </p>
             <a href="${routeHref('/fosiles')}" class="btn btn-outline" data-nav-link>
               Explorar el catálogo ${icons.arrowUpRight()}
+            </a>
+          </article>
+
+          <article class="info-card">
+            <img
+              src="${assetUrl('/assets/blog/titanoboa-uf-igm-2-escala.jpg')}"
+              alt="Vértebra fósil paratipo UF/IGM 2 de Titanoboa cerrejonensis con barra de escala"
+            />
+            <p class="fossil-credit">Anfecaro / Gretarsson · CC BY 4.0</p>
+            ${icons.compass('info-card-icon')}
+            <h2>Blog científico</h2>
+            <p class="section-copy">
+              Artículos de divulgación rigurosa, piezas audiovisuales verificadas y guías sobre el
+              patrimonio geológico y paleontológico de Colombia.
+            </p>
+            <a href="${routeHref('/blog')}" class="btn btn-outline" data-nav-link>
+              Leer artículos ${icons.arrowUpRight()}
             </a>
           </article>
 
@@ -1285,6 +1307,330 @@ function renderInformacionPage() {
               Consultar fuentes ${icons.arrowUpRight()}
             </a>
           </article>
+        </div>
+      </section>
+    `,
+  };
+}
+
+function renderBlogPage() {
+  const query = state.blogSearch.trim().toLowerCase();
+  const visible = blogPosts.filter((post) => {
+    const matchCat =
+      state.activeBlogCategory === 'Todas' || post.category === state.activeBlogCategory;
+    if (!matchCat) return false;
+    if (!query) return true;
+    const haystack = [
+      post.title,
+      post.excerpt,
+      post.period,
+      post.region,
+      ...(post.keywords || []),
+    ]
+      .join(' ')
+      .toLowerCase();
+    return haystack.includes(query);
+  });
+
+  const pillsHtml = blogCategories
+    .map(
+      (cat) => `
+      <button
+        type="button"
+        class="filter-pill ${state.activeBlogCategory === cat ? 'is-active' : ''}"
+        data-blog-cat="${escapeHtml(cat)}"
+      >
+        ${escapeHtml(cat)}
+      </button>
+    `
+    )
+    .join('');
+
+  const cardsHtml = visible
+    .map(
+      (post) => `
+      <article class="blog-card">
+        <a href="${routeHref(`/blog/${post.slug}`)}" class="blog-card-media" data-nav-link>
+          <img src="${escapeHtml(assetUrl(post.coverImage))}" alt="${escapeHtml(post.coverAlt)}" />
+        </a>
+        <p class="fossil-credit">${escapeHtml(post.coverCredit)}</p>
+        <div class="blog-card-meta">
+          <span class="status">${escapeHtml(post.statusBadge)}</span>
+          <span>${escapeHtml(post.category)} · ${escapeHtml(post.readingTime)}</span>
+        </div>
+        <h2>
+          <a href="${routeHref(`/blog/${post.slug}`)}" data-nav-link>${escapeHtml(post.title)}</a>
+        </h2>
+        <p class="blog-excerpt">${escapeHtml(post.excerpt)}</p>
+        <div class="blog-card-footer">
+          <span class="resource-meta">${escapeHtml(post.period)} · ${escapeHtml(post.region)}</span>
+          <a href="${routeHref(`/blog/${post.slug}`)}" class="text-link" data-nav-link>
+            Leer artículo completo ${icons.arrowUpRight()}
+          </a>
+        </div>
+      </article>
+    `
+    )
+    .join('');
+
+  const queueHtml = blogPipelineQueue
+    .map(
+      (item) => `
+      <div class="blog-queue-item">
+        <div class="blog-queue-title">${escapeHtml(item.title)}</div>
+        <div class="blog-queue-status">${escapeHtml(item.status)}</div>
+        <p>${escapeHtml(item.note)}</p>
+      </div>
+    `
+    )
+    .join('');
+
+  return {
+    title: 'Blog científico sobre fósiles y geología de Colombia | COLOMBIA FÓSIL',
+    description:
+      'Artículos divulgativos con respaldo bibliográfico primario (Nature, PNAS, SGC, ICANH) sobre paleontología, fósiles y patrimonio geológico de Colombia.',
+    canonicalPath: '/blog',
+    html: `
+      ${renderPageBanner(
+        'Divulgación con fuentes primarias',
+        'Blog científico de Colombia Fósil',
+        'Investigaciones verificadas, videos documentales y guías sobre patrimonio geológico y paleontológico colombiano, separando siempre evidencia física, estimación y reconstrucción artística.'
+      )}
+      <section class="container-shell section">
+        <div class="blog-toolbar">
+          <div class="filter-pills" role="group" aria-label="Filtrar artículos por categoría">
+            ${pillsHtml}
+          </div>
+          <label class="blog-search-box">
+            <span class="sr-only">Buscar artículos</span>
+            <input
+              type="search"
+              id="blog-search"
+              value="${escapeHtml(state.blogSearch)}"
+              placeholder="Buscar por tema, región o período..."
+              aria-label="Buscar artículos del blog"
+            />
+          </label>
+        </div>
+
+        <div class="blog-grid">
+          ${
+            cardsHtml ||
+            '<p class="section-copy">No encontramos artículos publicados con ese criterio de búsqueda.</p>'
+          }
+        </div>
+
+        <div class="blog-queue-panel">
+          <div class="eyebrow text-primary">Trazabilidad editorial</div>
+          <h3>Próximos temas en revisión científica</h3>
+          <p class="section-copy">
+            Ningún registro pasa al blog principal hasta verificar su publicación primaria, código de espécimen y derechos visuales.
+          </p>
+          <div class="blog-queue-grid">${queueHtml}</div>
+        </div>
+      </section>
+    `,
+  };
+}
+
+function renderBlogDetailPage(slug) {
+  const post = blogPosts.find((p) => p.slug === slug);
+  if (!post) return renderNotFoundPage();
+
+  const factsHtml = post.factsSummary
+    .map(
+      (f) => `
+      <div>
+        <dt>${escapeHtml(f.label)}</dt>
+        <dd>${escapeHtml(f.value)}</dd>
+      </div>
+    `
+    )
+    .join('');
+
+  const sectionsHtml = post.sections
+    .map(
+      (sec) => `
+      <h2>${escapeHtml(sec.heading)}</h2>
+      ${sec.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('')}
+    `
+    )
+    .join('');
+
+  const galleryHtml =
+    post.evidenceGallery && post.evidenceGallery.length
+      ? `
+      <div class="blog-evidence-grid">
+        ${post.evidenceGallery
+          .map(
+            (ev) => `
+          <figure class="blog-evidence-card">
+            <img src="${escapeHtml(assetUrl(ev.image))}" alt="${escapeHtml(ev.alt)}" />
+            <figcaption>
+              <strong>${escapeHtml(ev.caption)}</strong>
+              <span>
+                ${escapeHtml(ev.credit)} ·
+                <a href="${escapeHtml(ev.sourceUrl)}" target="_blank" rel="noreferrer" class="text-link">
+                  Ver origen ${icons.arrowUpRight()}
+                </a>
+              </span>
+            </figcaption>
+          </figure>
+        `
+          )
+          .join('')}
+      </div>
+    `
+      : '';
+
+  const videoHtml = post.videoUrl
+    ? `
+      <div class="blog-video-box">
+        <div class="blog-video-header">
+          <span class="status">Video verificado · ${escapeHtml(post.videoDuration)}</span>
+          <span class="resource-meta">Incluye rótulo explícito de Reconstrucción artística</span>
+        </div>
+        <video
+          controls
+          playsinline
+          preload="metadata"
+          poster="${escapeHtml(assetUrl(post.videoPoster || post.coverImage))}"
+          class="blog-video-player"
+        >
+          <source src="${escapeHtml(assetUrl(post.videoUrl))}" type="video/mp4" />
+          Tu navegador no soporta reproducción de video HTML5.
+        </video>
+        <p class="fossil-credit">${escapeHtml(post.videoNote)}</p>
+      </div>
+    `
+    : '';
+
+  const noClaimHtml =
+    post.whatWeDoNotClaim && post.whatWeDoNotClaim.length
+      ? `
+      <div class="notice">
+        <strong>Qué no afirmamos:</strong>
+        <ul>
+          ${post.whatWeDoNotClaim.map((c) => `<li>${escapeHtml(c)}</li>`).join('')}
+        </ul>
+      </div>
+    `
+      : '';
+
+  const faqHtml =
+    post.faq && post.faq.length
+      ? `
+      <h2>Preguntas frecuentes</h2>
+      <div class="blog-faq-list">
+        ${post.faq
+          .map(
+            (q) => `
+          <div class="blog-faq-item">
+            <h3>${escapeHtml(q.question)}</h3>
+            <p>${escapeHtml(q.answer)}</p>
+          </div>
+        `
+          )
+          .join('')}
+      </div>
+    `
+      : '';
+
+  const sourcesHtml = post.sources
+    .map(
+      (s) => `
+      <li>
+        <a href="${escapeHtml(s.url)}" target="_blank" rel="noreferrer" class="text-link">
+          ${escapeHtml(s.label)} ${icons.arrowUpRight()}
+        </a>
+      </li>
+    `
+    )
+    .join('');
+
+  const origin =
+    window.location.protocol === 'file:'
+      ? 'https://jmtechquindio.github.io/colombia-fosil-web'
+      : `${window.location.origin}${BASE_PATH}`;
+
+  const jsonLd = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: post.title,
+      description: post.seoDescription,
+      datePublished: post.publishedAt,
+      dateModified: post.publishedAt,
+      inLanguage: 'es-CO',
+      author: { '@type': 'Organization', name: 'COLOMBIA FÓSIL' },
+      publisher: { '@type': 'Organization', name: 'COLOMBIA FÓSIL' },
+      mainEntityOfPage: `${origin}/blog/${post.slug}`,
+      keywords: (post.keywords || []).join(', '),
+    },
+    ...(post.faq && post.faq.length
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: post.faq.map((q) => ({
+              '@type': 'Question',
+              name: q.question,
+              acceptedAnswer: { '@type': 'Answer', text: q.answer },
+            })),
+          },
+        ]
+      : []),
+  ];
+
+  return {
+    title: post.seoTitle || `${post.title} | COLOMBIA FÓSIL`,
+    description: post.seoDescription,
+    canonicalPath: `/blog/${post.slug}`,
+    jsonLd,
+    html: `
+      ${renderPageBanner(`${post.category} · ${post.publishedAt}`, post.title, post.excerpt)}
+      <section class="container-shell section">
+        <div class="blog-breadcrumb">
+          <a href="${routeHref('/blog')}" class="text-link" data-nav-link>
+            ← Volver al blog científico
+          </a>
+          <span class="status">${escapeHtml(post.statusBadge)}</span>
+        </div>
+
+        <div class="detail-layout">
+          <article class="blog-article-body">
+            ${videoHtml}
+            <figure class="blog-cover-figure">
+              <img src="${escapeHtml(assetUrl(post.coverImage))}" alt="${escapeHtml(post.coverAlt)}" />
+              <figcaption class="fossil-credit">${escapeHtml(post.coverCredit)}</figcaption>
+            </figure>
+
+            ${sectionsHtml}
+            ${galleryHtml}
+            ${noClaimHtml}
+            ${faqHtml}
+
+            <h2>Fuentes primarias y referencias verificadas</h2>
+            <ul>${sourcesHtml}</ul>
+          </article>
+
+          <aside>
+            <dl class="detail-facts">
+              ${factsHtml}
+            </dl>
+            <div class="blog-sidebar-cta">
+              <h3>Explora con rigor en territorio</h3>
+              <p>
+                Conoce nuestras expediciones geoarqueológicas o consulta el archivo de fósiles documentados.
+              </p>
+              <a href="${routeHref('/expediciones')}" class="btn btn-primary" data-nav-link>
+                Ver expediciones ${icons.arrowUpRight()}
+              </a>
+              <a href="${routeHref('/fosiles')}" class="btn btn-outline" data-nav-link>
+                Catálogo de fósiles ${icons.arrowUpRight()}
+              </a>
+            </div>
+          </aside>
         </div>
       </section>
     `,
@@ -1633,6 +1979,10 @@ function resolvePage(pathname, search) {
     return renderFosilesPage();
   }
   if (clean === '/informacion') return renderInformacionPage();
+  if (clean === '/blog') return renderBlogPage();
+  if (clean.startsWith('/blog/')) {
+    return renderBlogDetailPage(clean.slice('/blog/'.length));
+  }
   if (clean === '/ciencia') return renderCienciaPage();
   if (clean.startsWith('/ciencia/')) {
     return renderCienciaDetailPage(clean.slice('/ciencia/'.length));
@@ -1703,6 +2053,27 @@ function attachPageHandlers(appRoot) {
     });
   });
 
+  appRoot.querySelectorAll('[data-blog-cat]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      state.activeBlogCategory = btn.getAttribute('data-blog-cat') || 'Todas';
+      render(false);
+    });
+  });
+
+  const blogSearchInput = appRoot.querySelector('#blog-search');
+  if (blogSearchInput) {
+    blogSearchInput.addEventListener('input', () => {
+      const pos = blogSearchInput.selectionStart;
+      state.blogSearch = blogSearchInput.value;
+      render(false);
+      const nextInput = document.querySelector('#blog-search');
+      if (nextInput) {
+        nextInput.focus({ preventScroll: true });
+        if (typeof pos === 'number') nextInput.setSelectionRange(pos, pos);
+      }
+    });
+  }
+
   const periodSel = appRoot.querySelector('#filter-period');
   const locationSel = appRoot.querySelector('#filter-location');
   const typeSel = appRoot.querySelector('#filter-type');
@@ -1740,10 +2111,51 @@ function attachPageHandlers(appRoot) {
   attachContactFormHandlers(appRoot);
 }
 
+function updateSeoHead(page) {
+  document.title = page.title;
+  const defaultDesc =
+    'Turismo científico, expediciones de conocimiento y conservación del patrimonio natural y cultural colombiano.';
+  const desc = page.description || defaultDesc;
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) metaDesc.setAttribute('content', desc);
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute('content', page.title);
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  if (ogDesc) ogDesc.setAttribute('content', desc);
+  const twTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twTitle) twTitle.setAttribute('content', page.title);
+  const twDesc = document.querySelector('meta[name="twitter:description"]');
+  if (twDesc) twDesc.setAttribute('content', desc);
+
+  const canonicalUrl =
+    window.location.protocol === 'file:'
+      ? null
+      : `${window.location.origin}${BASE_PATH}${page.canonicalPath || '/'}`;
+  if (canonicalUrl) {
+    let link = document.querySelector('link[rel="canonical"]');
+    if (!link) {
+      link = document.createElement('link');
+      link.setAttribute('rel', 'canonical');
+      document.head.appendChild(link);
+    }
+    link.setAttribute('href', canonicalUrl);
+  }
+
+  const existingLd = document.getElementById('seo-jsonld');
+  if (existingLd) existingLd.remove();
+  if (page.jsonLd) {
+    const script = document.createElement('script');
+    script.id = 'seo-jsonld';
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(page.jsonLd);
+    document.head.appendChild(script);
+  }
+}
+
 function render(scrollTop = false, moveFocus = false) {
   const { pathname, search } = getCurrentRoute();
   const page = resolvePage(pathname, search);
-  document.title = page.title;
+  updateSeoHead(page);
 
   const appRoot = document.getElementById('app');
   appRoot.innerHTML = `
