@@ -686,6 +686,20 @@ export const fossilsCatalog = [
     photoSourceUrl: 'https://commons.wikimedia.org/wiki/File:Kronosaurus_boyacensis_fossil.jpg',
     geoContextUrl: 'https://doi.org/10.1016/j.cretres.2021.104885',
   },
+  {
+    id: 'ammonoidea-nicklesia-pulchella',
+    title: 'Nicklesia pulchella (Ammonites de Colombia)',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Nicklesia_pulchella.jpg',
+    imageAlt: 'Fósil de ammonite Nicklesia pulchella mostrando las líneas de sutura y costillas tabuladas',
+    credit: 'Ghedoghedo · CC BY-SA 3.0 · Wikimedia Commons',
+    period: 'Cretácico temprano (Barremiano, ~129–125 Ma)',
+    location: 'Formación Paja · Villa de Leyva y Sutamarchán, Boyacá',
+    type: 'Invertebrados marinos (Ammonoidea)',
+    description:
+      'Molusco cefalópodo con concha espiralada dividida en cámaras hidrostáticas. Como especie fósil guía, Nicklesia pulchella define la biozona formal del Barremiano temprano en la cuenca marina de Colombia (Patarroyo, 2009, 2020), permitiendo correlacionar depósitos con el dominio Tethys global.',
+    photoSourceUrl: 'https://commons.wikimedia.org/wiki/File:Nicklesia_pulchella.jpg',
+    geoContextUrl: 'https://doi.org/10.1016/j.cretres.2020.104523',
+  },
 ];
 
 export const blogCategories = ['Todas', 'Paleontología', 'Patrimonio y método'];
@@ -1003,6 +1017,106 @@ export const blogPosts = [
       {
         label: 'Hampe, O. (1992). Ein großwüchsiger Pliosauride (Reptilia: Plesiosauria) aus der Unterkreide (oberes Aptium) von Kolumbien. Courier Forschungsinstitut Senckenberg, 145, 1–32.',
         url: 'https://www.senckenberg.de/de/wissenschaft/publikationen/courier-forschungsinstitut-senckenberg/',
+      },
+    ],
+  },
+  {
+    slug: 'ammonoidea-ammonites-cretacico-colombia',
+    title: 'Ammonites de Colombia: el reloj biológico del mar cretácico y sus espirales fósiles',
+    seoTitle: 'Ammonites en Colombia: fósiles de Villa de Leyva, bioestratigrafía y Nicklesia pulchella | COLOMBIA FÓSIL',
+    seoDescription:
+      'Descubre cómo los ammonites fósiles de la Formación Paja (Nicklesia pulchella, Pulchellia galeata) funcionan como cronómetros geológicos para datar el mar cretácico colombiano con base en investigaciones de Pedro Patarroyo (2009, 2020).',
+    keywords: [
+      'Ammonites en Colombia',
+      'Nicklesia pulchella',
+      'Formación Paja Villa de Leyva',
+      'bioestratigrafía Cretácico',
+      'Pedro Patarroyo',
+      'fósiles marinos Colombia',
+      'Decreto 1353 de 2018',
+    ],
+    category: 'Paleontología',
+    statusBadge: 'Registro verificado',
+    publishedAt: '2026-12-01',
+    readingTime: '4 min de lectura',
+    period: 'Cretácico temprano (Barremiano, ~129–125 Ma)',
+    region: 'Villa de Leyva · Sutamarchán · Boyacá',
+    coverImage: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Nicklesia_pulchella.jpg',
+    coverAlt: 'Concha fósil de Nicklesia pulchella con costillas y suturas tabuladas',
+    coverCredit: 'Ghedoghedo vía Wikimedia Commons · CC BY-SA 3.0',
+    videoUrl: '/assets/video/ep03_ammonoidea_vertical_9x16.mp4',
+    videoPoster: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Nicklesia_pulchella.jpg',
+    videoDuration: '58 s',
+    videoNote:
+      'Video divulgativo oficial de COLOMBIA FÓSIL (v1.0.0). Combina fósiles físicos reales en colecciones oficiales con animación explicativa rotulada como Reconstrucción artística.',
+    excerpt:
+      'Hace 125 millones de años, moluscos cefalópodos con conchas de flotabilidad hidrostática dominaron los mares tropicales de Boyacá y Santander. Hoy son la herramienta bioestratigráfica más precisa para datar rocas cretácicas.',
+    factsSummary: [
+      { label: 'Taxón verificado', value: "Nicklesia pulchella (d'Orbigny, 1840) / Pulchelliidae" },
+      { label: 'Unidad y edad', value: 'Formación Paja / Rosablanca · Barremiano (~129–125 Ma)' },
+      { label: 'Localidad', value: 'Villa de Leyva, Sutamarchán y Sáchica (Boyacá)' },
+      { label: 'Custodia oficial', value: 'Colección Paleontológica Nacional (CPN) · SGC' },
+      { label: 'Función clave', value: 'Fósil guía y marcador de biozona de alta resolución' },
+      { label: 'Protección legal', value: 'Bien de interés geológico de la Nación (Dec. 1353/2018)' },
+    ],
+    sections: [
+      {
+        heading: 'Submarinos biológicos del mar cretácico',
+        paragraphs: [
+          'Durante el Cretácico temprano, gran parte de la actual cordillera oriental de Colombia estaba sumergida bajo un mar somero cálido de extraordinaria productividad biológica. Entre los habitantes más abundantes se encontraban los ammonites, moluscos cefalópodos emparentados con los pulpos y calamares modernos.',
+          'A diferencia de un gasterópodo común, un ammonite solo ocupaba la cámara exterior de su concha. Las cámaras interiores (el fragmocono), atravesadas por un conducto llamado sifúnculo, se llenaban o vaciaban de gas y líquido para controlar su flotabilidad con precisión hidrostática similar a un submarino moderno.',
+        ],
+      },
+      {
+        heading: 'Por qué son el reloj cronológico de la geología colombiana',
+        paragraphs: [
+          'Debido a su vertiginoso ritmo de especiación y rápida distribución global, las especies de ammonites sobrevivían periodos geológicos relativamente cortos. Por ello, la presencia de una especie determinada permite acotar la edad de una capa rocosa con una exactitud que los métodos radiométricos rara vez alcanzan en rocas sedimentarias.',
+          'Las investigaciones bioestratigráficas del profesor Pedro Patarroyo (2009, 2020) en la Universidad Nacional de Colombia y el Servicio Geológico Colombiano han establecido la Biozona de Nicklesia pulchella como referente de correlación internacional para el Barremiano temprano en América del Sur.',
+        ],
+      },
+      {
+        heading: 'Patrimonio de la Nación: no son artesanías',
+        paragraphs: [
+          'En diversas zonas turísticas de Boyacá es frecuente encontrar puestos informales de venta de fósiles cortados o pulidos como ceniceros y adornos. Es fundamental recordar que, bajo el Decreto 1353 de 2018, todo fósil descubierto en suelo colombiano es patrimonio geológico de la Nación bajo rectoría del Servicio Geológico Colombiano.',
+          'La extracción no científica destruye el contexto estratigráfico y la información irremplazable que permite descifrar el pasado de nuestro planeta. El turismo de ciencia y observación in situ es la vía ética y legal para admirar esta riqueza.',
+        ],
+      },
+    ],
+    evidenceGallery: [
+      {
+        url: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Nicklesia_pulchella.jpg',
+        caption: 'Concha fósil de Nicklesia pulchella exhibiendo costillaje discoidal típico de la familia Pulchelliidae.',
+        credit: 'Ghedoghedo (CC BY-SA 3.0)',
+      },
+    ],
+    faq: [
+      {
+        question: '¿Qué diferencia a un ammonite de un nautilo moderno?',
+        answer:
+          'Aunque ambos poseen conchas tabuladas con cámaras, el nautilo es un pariente lejano que sobrevivió a la gran extinción del Cretácico-Paleógeno. Los ammonites tenían suturas septales complejas y onduladas (en lugar de simples y curvadas como el nautilo) y se extinguieron hace 66 millones de años junto a los dinosaurios no avianos.',
+      },
+      {
+        question: '¿Dónde se pueden observar ammonites auténticos conservados en Colombia?',
+        answer:
+          'En el Museo Geológico Nacional José Royo y Gómez en Bogotá (SGC), en el Museo Paleontológico de Villa de Leyva (Universidad Nacional) y en los senderos geológicos comunitarios autorizados de Sutamarchán y Sáchica.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Patarroyo, P. (2009). Zonación con amonitas del Barremiano de la Formación Paja en un sector al noroeste de Villa de Leyva (Boyacá, Colombia). Boletín de Geología, 31(2), 29–41.',
+        url: 'https://revistas.uis.edu.co/index.php/boletindegeologia/article/view/364',
+      },
+      {
+        label: 'Patarroyo, P. (2020). Barremian ammonites of Colombia: biostratigraphic review and correlation. Cretaceous Research, 114, 104523.',
+        url: 'https://doi.org/10.1016/j.cretres.2020.104523',
+      },
+      {
+        label: 'Kakabadze, M. V., & Hoedemaeker, P. J. (2004). Barremian ammonites of the family Pulchelliidae from Colombia. Scripta Geologica, 128, 1–68.',
+        url: 'https://repository.naturalis.nl/pub/219664',
+      },
+      {
+        label: 'Decreto 1353 de 2018 por el cual se reglamenta la gestión integral del patrimonio geológico y paleontológico de la Nación. Servicio Geológico Colombiano.',
+        url: 'https://www.sgc.gov.co/patrimonio-geologico',
       },
     ],
   },
