@@ -672,6 +672,20 @@ export const fossilsCatalog = [
       'https://commons.wikimedia.org/wiki/File:Titanoboa_paratype_precloacal_vertebra_UF-IGM_2_edited_with_scale_bar.jpg',
     geoContextUrl: 'https://doi.org/10.1038/nature07671',
   },
+  {
+    id: 'monquirasaurus-boyacensis-jvp-001',
+    title: 'Monquirasaurus boyacensis (Holotipo JVP-001)',
+    image: '/assets/blog/monquirasaurus-jvp-001-museo.jpg',
+    imageAlt: 'Esqueleto fósil articulado del holotipo JVP-001 de Monquirasaurus boyacensis in situ',
+    credit: 'Edward M Johnson · CC BY-SA 2.0 · Wikimedia Commons',
+    period: 'Cretácico temprano (Aptiano)',
+    location: 'Formación Paja · Villa de Leyva, Boyacá',
+    type: 'Vertebrados (Pliosauridae)',
+    description:
+      'Esqueleto articulado casi completo conservado in situ en el Museo Comunitario El Fósil (Monquirá). Descrito originalmente como Kronosaurus boyacensis por Hampe (1992) y reclasificado en su propio género por Noè & Gómez-Pérez (2021), mide entre 9.3 y 10.0 m de longitud con un cráneo de ~2.6 m.',
+    photoSourceUrl: 'https://commons.wikimedia.org/wiki/File:Kronosaurus_boyacensis_fossil.jpg',
+    geoContextUrl: 'https://doi.org/10.1016/j.cretres.2021.104885',
+  },
 ];
 
 export const blogCategories = ['Todas', 'Paleontología', 'Patrimonio y método'];
@@ -950,7 +964,7 @@ export const blogPosts = [
         ],
       },
     ],
-    verifiedGallery: [
+    evidenceGallery: [
       {
         image: '/assets/blog/monquirasaurus-jvp-001-museo.jpg',
         alt: 'Esqueleto holotipo JVP-001 de Monquirasaurus boyacensis preservado in situ en el Museo El Fósil',
