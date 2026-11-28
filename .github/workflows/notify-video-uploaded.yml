@@ -1,0 +1,127 @@
+name: Notify Video Ready on Telegram
+
+on:
+  push:
+    paths:
+      - 'assets/video/*.mp4'
+  workflow_dispatch:
+    inputs:
+      video_filename:
+        description: 'Specific video filename (e.g. ep03_ammonoidea_vertical_9x16.mp4)'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    name: Notify Video Ready
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Send Telegram notification with native video
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          INPUT_FILENAME: ${{ inputs.video_filename }}
+        run: |
+          node -e "
+            import('node:fs/promises').then(async (fs) => {
+              const token = process.env.TELEGRAM_BOT_TOKEN;
+              const chatId = process.env.TELEGRAM_CHAT_ID;
+              if (!token || !chatId) {
+                console.log('Skipping: TELEGRAM_BOT_TOKEN or TELEGRAM_CHAT_ID not set.');
+                process.exit(0);
+              }
+
+              let targetVideo = process.env.INPUT_FILENAME?.trim();
+              if (!targetVideo) {
+                const files = await fs.readdir('assets/video');
+                const mp4s = files.filter(f => f.endsWith('_vertical_9x16.mp4'));
+                targetVideo = mp4s[mp4s.length - 1] || 'ep03_ammonoidea_vertical_9x16.mp4';
+              }
+
+              const match = targetVideo.match(/^ep0?(\d+)_([a-z0-9]+)/i);
+              const epNum = match ? match[1].padStart(2, '0') : '03';
+              const epTag = match ? match[2] : 'ammonoidea';
+              const episodeId = 'ep-' + epNum + '-' + epTag;
+
+              const videoUrl = 'https://jmtechquindio.github.io/colombia-fosil-web/assets/video/' + targetVideo;
+              const blogUrl = 'https://jmtechquindio.github.io/colombia-fosil-web/blog/' + episodeId;
+
+              const caption = [
+                '🎬 <b>¡NUEVO VIDEO LISTO PARA ESTRENO! · Colombia Fósil</b>',
+                '',
+                '<b>Episodio:</b> <code>' + episodeId + '</code>',
+                '<b>Archivo:</b> <code>' + targetVideo + '</code>',
+                '',
+                'El video vertical 9:16 ya se procesó, optimizó y alojó en el servidor.',
+                'Ficha científica y artículo SEO listos para despliegue multicanal.',
+                '',
+                '📖 <b>Artículo Web:</b> <a href=\"' + blogUrl + '\">Ver ficha y fuentes DOI</a>',
+                '',
+                '<b>¿Deseas publicarlo de inmediato o dejarlo en el calendario habitual?</b>'
+              ].join('\n');
+
+              const keyboard = {
+                inline_keyboard: [
+                  [
+                    { text: '🚀 Publicar ya sin esperar', callback_data: 'PUBLISH_NOW::' + episodeId }
+                  ],
+                  [
+                    { text: '📅 Dejar para el calendario', callback_data: 'KEEP_SCHEDULED::' + episodeId }
+                  ]
+                ]
+              };
+
+              let sent = false;
+              try {
+                const res = await fetch('https://api.telegram.org/bot' + token + '/sendVideo', {
+                  method: 'POST',
+                  headers: { 'content-type': 'application/json' },
+                  body: JSON.stringify({
+                    chat_id: chatId,
+                    video: videoUrl,
+                    caption: caption,
+                    parse_mode: 'HTML',
+                    supports_streaming: true,
+                    reply_markup: keyboard
+                  })
+                });
+                const data = await res.json();
+                if (res.ok && data.ok) {
+                  console.log('Video ready notification sent: message_id=' + data.result.message_id);
+                  sent = true;
+                }
+              } catch (err) {
+                console.warn('sendVideo error:', err.message);
+              }
+
+              if (!sent) {
+                const res = await fetch('https://api.telegram.org/bot' + token + '/sendMessage', {
+                  method: 'POST',
+                  headers: { 'content-type': 'application/json' },
+                  body: JSON.stringify({
+                    chat_id: chatId,
+                    text: caption + '\n\n🎬 <b>Video preview:</b> <a href=\"' + videoUrl + '\">' + videoUrl + '</a>',
+                    parse_mode: 'HTML',
+                    disable_web_page_preview: false,
+                    reply_markup: keyboard
+                  })
+                });
+                const data = await res.json();
+                console.log('Fallback sendMessage sent: message_id=' + data.result?.message_id);
+              }
+            });
+          "
