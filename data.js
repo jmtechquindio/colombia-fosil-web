@@ -882,6 +882,116 @@ export const blogPosts = [
       },
     ],
   },
+  {
+    slug: 'monquirasaurus-boyacensis-villa-de-leyva',
+    title: 'Monquirasaurus boyacensis: el gigante marino del mar cretácico de Villa de Leyva',
+    seoTitle: 'Monquirasaurus boyacensis en Villa de Leyva: fósil real JVP-001 y longitud | COLOMBIA FÓSIL',
+    seoDescription:
+      'Descubre la verdad científica de Monquirasaurus boyacensis ("El Fósil" de Monquirá, Villa de Leyva): esqueleto holotipo JVP-001, revisión de Noè & Gómez-Pérez (2021) y por qué ya no es Kronosaurus.',
+    keywords: [
+      'Monquirasaurus boyacensis',
+      'Kronosaurus boyacensis',
+      'El Fósil Villa de Leyva',
+      'Museo El Fósil Monquirá',
+      'pliosaurio Colombia',
+      'Formación Paja',
+      'fósiles Villa de Leyva',
+      'paleontología colombiana',
+    ],
+    category: 'Paleontología',
+    statusBadge: 'Registro verificado',
+    publishedAt: '2026-11-28',
+    readingTime: '6 min de lectura',
+    period: 'Cretácico temprano (Aptiano, ~120–115 Ma)',
+    region: 'Vereda Monquirá · Villa de Leyva, Boyacá',
+    coverImage: '/assets/blog/monquirasaurus-jvp-001-museo.jpg',
+    coverAlt:
+      'Esqueleto fósil articulado del holotipo JVP-001 de Monquirasaurus boyacensis exhibido in situ en el Museo El Fósil de Monquirá',
+    coverCredit: 'Edward M Johnson vía Wikimedia Commons · CC BY-SA 2.0',
+    videoUrl: null,
+    videoPoster: '/assets/blog/monquirasaurus-jvp-001-museo.jpg',
+    videoDuration: '50 s (En render)',
+    videoNote:
+      'Episodio 2 oficial de COLOMBIA FÓSIL. Guion verificado basado en el holotipo JVP-001 y la revisión taxonómica de Noè & Gómez-Pérez (2021).',
+    excerpt:
+      'Descubierto en 1977 en Monquirá, el esqueleto JVP-001 es uno de los pliosaurios más completos del planeta. Conoce por qué la ciencia lo separó de Kronosaurus y qué medía en realidad.',
+    factsSummary: [
+      { label: 'Taxón verificado', value: 'Monquirasaurus boyacensis (Hampe, 1992) Noè & Gómez-Pérez, 2021' },
+      { label: 'Unidad y edad', value: 'Formación Paja · Aptiano (~120–115 Ma)' },
+      { label: 'Localidad', value: 'Vereda Monquirá, Villa de Leyva, Boyacá' },
+      { label: 'Ejemplar tipo', value: 'Holotipo JVP-001 (preservado in situ)' },
+      { label: 'Longitud real estimada', value: '~9.3 a 10.0 metros (cráneo de ~2.6 m)' },
+      { label: 'Custodia patrimonial', value: 'Museo Comunitario El Fósil (Junta de Vecinos)' },
+    ],
+    sections: [
+      {
+        heading: '1. El hallazgo fortuito que transformó a Villa de Leyva en 1977',
+        paragraphs: [
+          'En 1977, durante labores agrícolas cotidianas en la vereda Monquirá (a pocos kilómetros del casco urbano de Villa de Leyva), campesinos de la zona desenterraron una serie de vértebras gigantes y un cráneo masivo petrificado en la roca arcillosa. Consciente del inmenso valor histórico y científico del hallazgo, la propia comunidad local decidió protegerlo donde estaba y levantó el Museo Comunitario El Fósil alrededor del espécimen, convirtiéndolo en un hito pionero de custodia comunitaria en América Latina.',
+          'El espécimen recibió la sigla JVP-001 (Junta de Vecinos de Monquirá / Pro-Museo El Fósil 001) y permanece hasta hoy en la misma posición en la que el antiguo reptil quedó sepultado en el fondo marino hace unos 120 millones de años.',
+        ],
+      },
+      {
+        heading: '2. De Kronosaurus a Monquirasaurus: la revisión anatómica de 2021',
+        paragraphs: [
+          'Durante casi tres décadas, el animal fue conocido popularmente y en publicaciones tempranas como Kronosaurus boyacensis, asignado por el paleontólogo alemán Oliver Hampe en 1992 por similitud general con el famoso pliosaurio australiano Kronosaurus queenslandicus.',
+          'Sin embargo, una exhaustiva reevaluación osteológica liderada por Leslie F. Noè y Marcela Gómez-Pérez en 2021 demostró que el espécimen colombiano posee diferencias anatómicas profundas que justifican su propio género: una morfología nasal y premaxilar diagnóstica, una sutura mandibular distintiva y un patrón dentario que lo separa taxativamente del género de Oceanía. Así nació formalmente Monquirasaurus boyacensis, honrando a la vereda de Boyacá donde reposa.',
+        ],
+        callout: {
+          badge: 'Criterio taxonómico formal',
+          text: 'Noè & Gómez-Pérez (2021) establecieron Monquirasaurus como género independiente tras cotejar directamente el holotipo JVP-001 con el material tipo de Kronosaurus en Australia.',
+        },
+      },
+      {
+        heading: '3. Longitud real comprobada: desmintiendo mitos de 15 a 20 metros',
+        paragraphs: [
+          'En la divulgación popular y folletos turísticos informales circularon estimaciones hiperbólicas de hasta 15 o 20 metros de longitud. El estudio osteológico riguroso del esqueleto articulado JVP-001 sitúa su cráneo entre ~2.45 y ~2.65 metros, y su longitud total entre 9.3 y 10.0 metros.',
+          'Con diez metros de envergadura, dientes cónicos de más de 10 centímetros y una masa calculada en varias toneladas impulsada por cuatro aletas hidrodinámicas, Monquirasaurus fue el superdepredador ápice del mar epicontinental que cubría el centro de Colombia en el Cretácico temprano.',
+        ],
+      },
+    ],
+    verifiedGallery: [
+      {
+        image: '/assets/blog/monquirasaurus-jvp-001-museo.jpg',
+        alt: 'Esqueleto holotipo JVP-001 de Monquirasaurus boyacensis preservado in situ en el Museo El Fósil',
+        caption: 'Holotipo articulado JVP-001 conservado in situ en el Museo Comunitario El Fósil (Villa de Leyva).',
+        credit: 'Edward M Johnson vía Wikimedia Commons · CC BY-SA 2.0',
+        sourceUrl: 'https://commons.wikimedia.org/wiki/File:Kronosaurus_boyacensis_fossil.jpg',
+      },
+    ],
+    whatWeDoNotClaim: [
+      'No afirmamos que era un dinosaurio: Monquirasaurus es un reptil marino plesiosaurio (familia Pliosauridae).',
+      'No afirmamos medidas exageradas de 15 o 20 metros; las medidas osteológicas verificadas sitúan la longitud entre 9.3 y 10.0 m.',
+      'No mantenemos la clasificación en Kronosaurus como válida, tras la revisión publicada por Noè & Gómez-Pérez en 2021.',
+    ],
+    faq: [
+      {
+        question: '¿Dónde se encuentra el fósil original de Monquirasaurus boyacensis?',
+        answer:
+          'Se conserva articulado in situ en el Museo Comunitario El Fósil, ubicado en la vereda Monquirá, a 5 km de Villa de Leyva (Boyacá, Colombia).',
+      },
+      {
+        question: '¿Por qué ya no se llama Kronosaurus?',
+        answer:
+          'La revisión científica de Noè & Gómez-Pérez (2021) demostró que el espécimen de Boyacá posee diferencias anatómicas determinantes en el cráneo y las mandíbulas respecto a la especie australiana Kronosaurus queenslandicus, erigiendo el género exclusivo Monquirasaurus.',
+      },
+      {
+        question: '¿Qué edad tienen las rocas donde se preservó?',
+        answer:
+          'Pertenece al Miembro Arcillolitas Abigarradas de la Formación Paja, datado en el Cretácico temprano (Aptiano, hace aproximadamente 120 a 115 millones de años).',
+      },
+    ],
+    sources: [
+      {
+        label: 'Noè, L. F. & Gómez-Pérez, M. (2021). Giant pliosaurid plesiosaurs from the Lower Cretaceous of Colombia. Cretaceous Research, 126, 104885.',
+        url: 'https://doi.org/10.1016/j.cretres.2021.104885',
+      },
+      {
+        label: 'Hampe, O. (1992). Ein großwüchsiger Pliosauride (Reptilia: Plesiosauria) aus der Unterkreide (oberes Aptium) von Kolumbien. Courier Forschungsinstitut Senckenberg, 145, 1–32.',
+        url: 'https://www.senckenberg.de/de/wissenschaft/publikationen/courier-forschungsinstitut-senckenberg/',
+      },
+    ],
+  },
 ];
 
 export const blogPipelineQueue = [
