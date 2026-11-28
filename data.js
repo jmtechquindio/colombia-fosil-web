@@ -1120,6 +1120,107 @@ export const blogPosts = [
       },
     ],
   },
+  {
+    slug: 'formacion-paja-mar-cretacico-villa-de-leyva',
+    title: 'Formación Paja: el gran mar cretácico y el cementerio de gigantes de Villa de Leyva',
+    seoTitle: 'Formación Paja en Colombia: el mar cretácico, fósiles gigantes y geología de Villa de Leyva | COLOMBIA FÓSIL',
+    seoDescription:
+      'Descubre la geología de la Formación Paja en Boyacá: cómo un mar anóxico del Cretácico temprano preservó esqueletos completos de pliosaurios, ictiosaurios y tortugas gigantes como Desmatochelys padillai.',
+    keywords: [
+      'Formación Paja Villa de Leyva',
+      'mar cretácico Colombia',
+      'Konservat-Lagerstätte Colombia',
+      'geología Boyacá',
+      'Desmatochelys padillai',
+      'Monquirasaurus',
+      'Servicio Geológico Colombiano',
+      'paleontología Villa de Leyva',
+    ],
+    category: 'Paleontología',
+    statusBadge: 'Registro verificado',
+    publishedAt: '2026-12-04',
+    readingTime: '5 min de lectura',
+    period: 'Cretácico temprano (Hauteriviano–Aptiano, ~130–113 Ma)',
+    region: 'Villa de Leyva · Sáchica · Sutamarchán (Boyacá)',
+    coverImage: '/assets/expeditions/desierto-campo-estratos.jpg',
+    coverAlt: 'Estratigrafía sedimentaria y colinas de lutitas de la Formación Paja en Villa de Leyva',
+    coverCredit: 'COLOMBIA FÓSIL · Archivo Documental',
+    videoUrl: '/assets/video/ep04_formacion_paja_vertical_9x16.mp4',
+    videoPoster: '/assets/expeditions/desierto-campo-estratos.jpg',
+    videoDuration: '58 s',
+    videoNote:
+      'Video divulgativo oficial de COLOMBIA FÓSIL (v1.0.0). Combina tomas geológicas in situ con reconstrucción artística rotulada de la cuenca marina cretácica.',
+    excerpt:
+      'Hace 120 millones de años, las colinas secas de Villa de Leyva formaban el lecho de un mar tropical somero. Sus fondos sin oxígeno crearon uno de los yacimientos de fósiles marinos articulados más asombrosos del planeta.',
+    factsSummary: [
+      { label: 'Unidad estratigráfica', value: 'Formación Paja (Morales et al., 1958; Etayo-Serna, 1968)' },
+      { label: 'Edad geológica', value: 'Hauteriviano a Aptiano (~130–113 Ma)' },
+      { label: 'Tipo de depósito', value: 'Konservat-Lagerstätte marino (fondo anóxico)' },
+      { label: 'Miembro fosilífero clave', value: 'Miembro Arcillolitas Abigarradas' },
+      { label: 'Vertebrados notables', value: 'Monquirasaurus, Sachicasaurus, Kyhytysuka, Desmatochelys' },
+      { label: 'Amparo legal', value: 'Patrimonio geológico de la Nación (Decreto 1353 de 2018)' },
+    ],
+    sections: [
+      {
+        heading: 'Un océano tropical donde hoy se alzan los Andes',
+        paragraphs: [
+          'El paisaje desértico y quebrado que rodea hoy a Villa de Leyva, Sáchica y Sutamarchán fue hace 120 millones de años una extensa cuenca marina somera conectada con el dominio Tethys. En este ambiente prosperó una cadena trófica completa, desde microplancton y cefalópodos hasta gigantescos reptiles marinos.',
+          'La Formación Paja fue definida estratigráficamente por Morales et al. (1958) y dividida en tres miembros formales por el geólogo colombiano Fernando Etayo-Serna (1968): el Miembro Lutitas Negras inferior, el Miembro Arcillolitas Abigarradas intermedio y el Miembro Arcillolitas con Nódulos superior.',
+        ],
+      },
+      {
+        heading: 'El secreto tafonómico: ¿por qué los fósiles están tan completos?',
+        paragraphs: [
+          'La mayoría de los seres marinos al morir se dispersan por la corriente o son devorados por carroñeros. Sin embargo, en la Formación Paja, investigaciones geoquímicas y sedimentológicas (Forero & Sarmiento, 1985) demostraron que el fondo marino experimentó periodos prolongados de anoxia (ausencia casi total de oxígeno disuelto).',
+          'Esta falta de oxígeno impidió la proliferación de gusanos bioturbadores y bacterias descomponedoras rápidas. Los cuerpos que caían al lecho de lodo se cubrían rápidamente de sedimentos finos, dando origen a un Konservat-Lagerstätte: un yacimiento de preservación excepcional donde los esqueletos se conservaron articulados e intactos durante más de cien millones de años.',
+        ],
+      },
+      {
+        heading: 'Los grandes protagonistas de Boyacá',
+        paragraphs: [
+          'Entre los hallazgos más extraordinarios de la Formación Paja destacan el superdepredador Monquirasaurus boyacensis (9.3–10 m), el pliosáurido Sachicasaurus vitae (cuyo cráneo roza los 2.6 m), el ictiosaurio hipercarnívoro Kyhytysuka sachicarum y la tortuga marina primitiva más antigua del registro fósil mundial: Desmatochelys padillai, descrita por Cadena & Parham (2015).',
+          'Toda esta riqueza paleontológica es patrimonio de interés geológico protegido por la legislación colombiana bajo rectoría del Servicio Geológico Colombiano.',
+        ],
+      },
+    ],
+    evidenceGallery: [
+      {
+        url: '/assets/expeditions/desierto-campo-estratos.jpg',
+        caption: 'Afloramiento de estratos sedimentarios de la Formación Paja en el sector de Villa de Leyva y Sutamarchán.',
+        credit: 'COLOMBIA FÓSIL · Archivo Documental',
+      },
+    ],
+    faq: [
+      {
+        question: '¿Por qué Villa de Leyva tiene fósiles marinos si está a más de 2.100 metros de altura?',
+        answer:
+          'Porque durante el Cretácico no existía la Cordillera Oriental. El territorio era un mar somero. Posteriormente, la orogenia andina (el levantamiento tectónico de los últimos 20 a 10 millones de años) empujó y plegó esas rocas marinas hasta elevarlas a su altura actual.',
+      },
+      {
+        question: '¿Qué significa que sea un Lagerstätte?',
+        answer:
+          'Lagerstätte es un término geológico alemán que designa yacimientos con una concentración inusualmente alta de fósiles o una calidad de preservación tan extraordinaria que conserva esqueletos articulados o partes blandas.',
+      },
+    ],
+    sources: [
+      {
+        label: 'Etayo-Serna, F. (1968). El Sistema Cretácico en la región de Villa de Leyva y zonas próximas. Geología Colombiana, 5, 5–74.',
+        url: 'https://revistas.unal.edu.co/index.php/geocol/article/view/30438',
+      },
+      {
+        label: 'Etayo-Serna, F. (1979). Zonation of the Cretaceous of central Colombia by ammonites. Publicaciones Geológicas Especiales del Ingeominas, 2, 1–186.',
+        url: 'https://recordcenter.sgc.gov.co',
+      },
+      {
+        label: 'Forero, H. & Sarmiento, L. F. (1985). La facies lutítica de la Formación Paja en la región de Villa de Leyva. Proyecto Cretácico, Ingeominas.',
+        url: 'https://www.sgc.gov.co',
+      },
+      {
+        label: 'Cadena, E. A. & Parham, J. F. (2015). Oldest known marine turtle? A new protostegid from the Lower Cretaceous of Colombia. PaleoBios, 32, 1–42.',
+        url: 'https://doi.org/10.5070/P9321028615',
+      },
+    ],
+  },
 ];
 
 export const blogPipelineQueue = [
